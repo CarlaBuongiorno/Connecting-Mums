@@ -11318,3 +11318,17 @@ textarea.form-control-lg {
 .social-nav-link {
   color: #D5A021;
 }
+
+
+/* .hero-home {
+  background:url('/img/hero.jpeg') no-repeat center center fixed;
+  background-blend-mode: multiply;
+  background-size: cover;
+  min-height: 250px;
+  height: 100vh;
+  
+  display: flex;
+  flex-direction :column;
+  align-items: center;
+  justify-content :center
+} */

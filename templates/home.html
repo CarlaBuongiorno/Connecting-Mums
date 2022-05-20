@@ -2,11 +2,12 @@
 {% block content %}
 <!-- Header-->
 
-<img src="{{ url_for('static', filename='assets/img/hero.jpeg') }}" class="d-block w-100" alt="purple blue background">
+<img src="{{ url_for('static', filename='assets/img/hero.jpeg') }}" class="d-block w-100" alt="">
+
 <header class="bg-dark py-5 bg-header">
-    <div class="container px-5">
+    <div class="container px-5 hero-home">
         <div class="row gx-5 justify-content-center">
-            <div class="col-lg-6">
+            <div class="col-lg-6 hero-home">
                 <div class="text-center my-5">
                     <h1 class="display-5 fw-bolder text-white mb-2">Getting mums the support they need</h1>
                     <p class="lead text-white-50 mb-4">What if the "happiest time of your life" doesn't feel so happy. If you’re a mum suffering from anxiety and/or depression during pregnancy or after childbirth, you’re not alone. Meet other mums from around the world virtually or in real life and start sharing your story.</p>
@@ -19,6 +20,7 @@
         </div>
     </div>
 </header>
+
 <!-- Features section-->
 
 <section class="py-5 border-bottom" id="features">
@@ -54,5 +56,59 @@
         </div>
     </div>
 </section>
+
+<!-- Upcoming events-->
+<section class="py-5">
+    <div class="container px-5 my-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-8 col-xl-6">
+                <div class="text-center">
+                    <h2 class="fw-bolder">Upcoming Events</h2>
+                    <p class="lead fw-normal text-muted mb-5"> Create a function to show only 3 upcoming events</p>
+                </div>
+            </div>
+        </div>
+        {% for event in events %}
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-5">
+                <div class="card h-100 shadow border-0">
+                    <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="event_image" />
+                    <div class="card-body p-4">
+                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">{{ event.event_place }}</div>
+                        <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">{{ event.event_name}}</h5></a>
+                        <p class="card-text mb-0">{{ event.event_description }}</p>
+                    </div>
+                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                                <div class="small">
+                                    <div class="text-muted">{{ event.event_date }}</div>
+                                    {%if session.user not in event.members_attending%}
+                                        <a href="{{ url_for('attend_event', event_id=event._id) }}">I want to attend this event</a>
+                                    {%else%}
+                                        <div>Already attending event</div>
+                                    {%endif%}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+    <!-- About-->
+        <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5">
+            <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
+                <div class="mb-4 mb-xl-0">
+                    <div class="fs-4 fw-bold text-white">Connecting Mums Support Hotline</div>
+                    <div class="fs-5 fw-bold text-white">555-555-555</div>
+                    <div class="text-white-50">Available 24 hours a day, 7 days a week</div>
+                </div>
+            </div>
+        </aside>
 
 {% endblock %}
