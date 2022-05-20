@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <form id="registration-form" method="POST" action="{{ url_for('register') }}">
+    <form id="login-form" method="POST" action="{{ url_for('login') }}">
         <div class="form-group">
             <!-- username -->
             <label for="username">Username</label>
@@ -12,13 +12,12 @@
             <!-- email -->
             <label for="email">Email address</label>
             <input type="email" name="email" class="form-control" id="email" aria-describedby="email">
-            <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
             <!-- password -->
             <label for="password">Password</label>
             <input type="password" name="password" class="form-control" id="password" minlength="5"
-                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                maxlength="15" required>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -26,8 +25,8 @@
     <section class="row">
         <div class="col-12">
             <p class="text-center">
-                Already Registered? 
-                <a href="{{ url_for('login') }}" class="text-success">Log In</a>
+                New Here? 
+                <a href="{{ url_for('register') }}" class="text-success">Register</a>
             </p>
         </div>
     </section>
