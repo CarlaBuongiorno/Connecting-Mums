@@ -37,6 +37,28 @@ def get_events():
     events = mongo.db.events.find()
     return render_template("events.html", events=events)
 
+@app.route("/new_event", methods=["GET", "POST"])
+def new_event():
+    '''
+    Create a new event by the user
+    ''' 
+    if session.get("user", "") == "":  # only allow add if admin
+        #return redirect("get_events")
+        print("pretend i blocked the user here")
+
+    if request.method == 'POST':
+        
+        # request form already follows correct format for data in database,
+        # so get that into dict
+        event = request.form.to_dict()
+        event["owner"] = session.get("event_owner", "")
+        event["test_event"] = True
+        #mongo.db.events.insert_one(item)
+        print(event)
+    else:
+        print("hi")
+    return render_template("events_form.html", event = [])
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
