@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env # nqa
 
@@ -19,6 +20,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+@app.route("/")
 @app.route("/home")
 def home():
     """
@@ -27,7 +29,11 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/")
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
+
+
 @app.route("/get_events")
 def get_events():
     """
@@ -37,18 +43,19 @@ def get_events():
     events = mongo.db.events.find()
     return render_template("events.html", events=events)
 
+
 @app.route("/new_event", methods=["GET", "POST"])
 def new_event():
     '''
     Create a new event by the user
-    ''' 
+    '''
     #this would be user logged in validation
     if session.get("user", "") == "":  # only allow add if admin
         #return redirect("get_events")
         print("pretend i blocked the user here : new event")
 
     if request.method == 'POST':
-        
+
         # request form already follows correct format for data in database,
         # so get that into dict
         event = request.form.to_dict()
@@ -59,9 +66,10 @@ def new_event():
         return redirect("/get_events")
     return render_template("events_form.html")
 
+
 @app.route("/attend_event/<event_id>")
 def attend_event(event_id):
-    ''' 
+    '''
     Allows a user to say they want to attend a given event
     '''
     #this would be user logged in validation
@@ -70,7 +78,7 @@ def attend_event(event_id):
         session["user"] = random.randint(0,100)
         print("pretend i blocked the user here : attend event")
     mongo.db.events.update_one(
-        {"_id": ObjectId(event_id)}, 
+        {"_id": ObjectId(event_id)},
         {"$addToSet": 
             {"members_attending": session.get("user", "")}
         })
