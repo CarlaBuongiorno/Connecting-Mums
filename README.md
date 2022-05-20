@@ -71,7 +71,6 @@ c. Restraints
 * As a mother I want to be aware of trending topics around motherhood so that I better myself and my community
 * As a mother I want to be inspired by daily quotes so that it reassures me in my role of mother
 
-
 ### Design
 
 1. Color Scheme
