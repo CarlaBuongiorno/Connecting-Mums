@@ -1,13 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>I'm extending the base template</h2>
-
+<ul>
     {% for event in events %}
+    <li>
         {{ event.event_name }}<br>
-        {{ event.event_day }}<br>
-        {{ event.event_time }}<br>
+        {{ event.event_date }}<br>
         {{ event.event_place }}<br>
+        {{ event.event_description }}<br>
+        Attendees : {{ event.members_attending }}<br>
+        NumOfAttendees : {{ event.members_attending | length }}<br>
+        <a href="{{ url_for('attend_event', event_id=event._id) }}">I want to attend this event</a>
+    </li>
     {% endfor %}
+</ul>
 
 {% endblock %}
