@@ -11298,6 +11298,23 @@ textarea.form-control-lg {
 
 /* personalized button*/
 
+/* HOME */
+
+.hero-home {
+  background:url('assets/img/hero_2.jpeg');
+  background-blend-mode: multiply;
+  background-size: cover;
+  min-height: 250px;
+  height: 100vh;
+  
+  display: flex;
+  flex-direction :column;
+  align-items: center;
+  justify-content :center
+}
+
+/* BUTTON */
+
 .btn-primary, 
         .btn-primary:hover {
             background-color: #BC2065;
@@ -11310,26 +11327,18 @@ textarea.form-control-lg {
             border-color: #FDD7E7 !important;
             box-shadow: 0 0 0 0.2rem rgba(213,160,33, 0.5) !important;
         }
-  
+ 
+/* NAVBAR */
+        
 .arrow-nav-link {
   color: #BC2065;
 
 }
+
+/* FOOTER */
 
 .social-nav-link {
   color: #D5A021;
 }
 
 
-/* .hero-home {
-  background:url('/img/hero.jpeg') no-repeat center center fixed;
-  background-blend-mode: multiply;
-  background-size: cover;
-  min-height: 250px;
-  height: 100vh;
-  
-  display: flex;
-  flex-direction :column;
-  align-items: center;
-  justify-content :center
-} */
