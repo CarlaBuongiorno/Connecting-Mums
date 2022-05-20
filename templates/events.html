@@ -10,7 +10,11 @@
         {{ event.event_description }}<br>
         Attendees : {{ event.members_attending }}<br>
         NumOfAttendees : {{ event.members_attending | length }}<br>
-        <a href="{{ url_for('attend_event', event_id=event._id) }}">I want to attend this event</a>
+        {%if session.user not in event.members_attending%}
+            <a href="{{ url_for('attend_event', event_id=event._id) }}">I want to attend this event</a>
+        {%else%}
+            <div>Already attending event</div>
+        {%endif%}
     </li>
     {% endfor %}
 </ul>
