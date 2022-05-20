@@ -76,10 +76,9 @@ def new_event():
     '''
     Create a new event by the user
     '''
-    #this would be user logged in validation
     if session.get("user", "") == "":  # only allow add if admin
-        #return redirect("get_events")
-        print("pretend i blocked the user here : new event")
+        flash("Please log in before creating a new event")
+        return redirect("get_events")
 
     if request.method == 'POST':
 
@@ -90,6 +89,7 @@ def new_event():
         event["members_attending"] = []
         event["test_event"] = True
         mongo.db.events.insert_one(event)
+        flash(f"You have now created new event {event[event_name]}")
         return redirect("/get_events")
     return render_template("events_form.html")
 
@@ -99,11 +99,10 @@ def attend_event(event_id):
     '''
     Allows a user to say they want to attend a given event
     '''
-    #this would be user logged in validation
     if session.get("user", "") == "":
-        #return redirect("get_events")
-        session["user"] = random.randint(0,100)
-        print("pretend i blocked the user here : attend event")
+        flash("please log in so we can know whos going")
+        return redirect("/get_events")
+    
     mongo.db.events.update_one(
         {"_id": ObjectId(event_id)},
         {"$addToSet": 
