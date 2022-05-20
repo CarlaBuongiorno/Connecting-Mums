@@ -25,10 +25,14 @@
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('get_events') }}">Events</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">My Account</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Logout</a></li>
                 {% else %}
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('register')}}">Register</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('get_events') }}">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('register') }}">Register</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Login</a></li>
                 {% endif %}
             </ul>
@@ -41,25 +45,25 @@
 
 <!-- Footer-->
 <footer class="footer py-5 bg-dark">
-    <div class="row">
+    <div class="row mr-5">
         <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
             <p class="m-0 text-center text-white">Copyright &copy; Connecting Mums 2022</p>
         </div>
         <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
-            <ul class="list-inline mb-2 social-nav-link">
-                <li class="list-inline-item">
+            <ul class="list-inline mb-2">
+                <li class="list-inline-item social-nav-link">
                   <a target="_blank" href="https://www.facebook.com/Code.InstituteIRL">
                     <i class="fab fa-facebook fa-2x" aria-hidden="true"></i>
                     <span class="sr-only">Facebook</span>
                   </a>
                 </li>
-                <li class="list-inline-item ">
+                <li class="list-inline-item social-nav-link ">
                   <a target="_blank" href="https://twitter.com/">
                     <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
                     <span class="sr-only">Twitter</span>
                   </a>
                 </li>
-                <li class="list-inline-item">
+                <li class="list-inline-item social-nav-link">
                   <a target="_blank" href="https://www.instagram.com/">
                     <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
                     <span class="sr-only">Instagram</span>
