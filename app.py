@@ -51,14 +51,20 @@ def new_event():
         # request form already follows correct format for data in database,
         # so get that into dict
         event = request.form.to_dict()
-        event["owner"] = session.get("event_owner", "")
+        event["event_owner"] = session.get("user", "")
+        event["members_attending"] = []
         event["test_event"] = True
-        #mongo.db.events.insert_one(item)
-        print(event)
-    else:
-        print("hi")
+        mongo.db.events.insert_one(event)
+        return redirect("/get_events")
     return render_template("events_form.html", event = [])
 
+@app.route("/attend_event/<event_id>")
+def attend_event(event_id):
+    print(event_id)
+    if session.get("user", "") == "":
+        return redirect("/get_events")
+    mongo.db.events.update_one({"_id": ObjectId(event_id)}, {"$addToSet": {"members_attending": session.get("user", "")}})
+    return redirect("/get_events")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
