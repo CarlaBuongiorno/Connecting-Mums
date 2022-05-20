@@ -2,14 +2,15 @@
 {% block content %}
 
 <!-- Header-->
+
 <img src="{{ url_for('static', filename='assets/img/hero.jpeg') }}" class="d-block w-100" alt="purple blue background">
 <header class="bg-dark py-5">
     <div class="container px-5">
         <div class="row gx-5 justify-content-center">
             <div class="col-lg-6">
                 <div class="text-center my-5">
-                    <h1 class="display-5 fw-bolder text-white mb-2">The Connecting Mums Community</h1>
-                    <p class="lead text-white-50 mb-4">What if the "happiest time of your life" doesn't feel so happy. If you’re a mom suffering from anxiety and/or depression during pregnancy or after childbirth, you’re not alone. Meet other mums from around the world virtually or in real life and share your story.</p>
+                    <h1 class="display-5 fw-bolder text-white mb-2">Getting mums the support they need</h1>
+                    <p class="lead text-white-50 mb-4">What if the "happiest time of your life" doesn't feel so happy. If you’re a mum suffering from anxiety and/or depression during pregnancy or after childbirth, you’re not alone. Meet other mums from around the world virtually or in real life and start sharing your story.</p>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                         <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Join us</a>
                         <a class="btn btn-outline-light btn-lg px-4" href="{{ url_for('get_events') }}">Browse events</a>
@@ -23,31 +24,31 @@
 
 <section class="py-5 border-bottom" id="features">
     <div class="container px-5 my-5">
-        <div class="row gx-5">
+        <div class="row gx-5  text-center">
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                <h2 class="h4 fw-bolder">Sign up</h2>
-                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                <a class="text-decoration-none" href="#!">
-                    Call to action
+                <h2 class="h4 fw-bolder">Be one of us</h2>
+                <p>What mums need most is their mental health. Sign up to join and create inspirational and supportive events and be part of the connecting mums community.</p>
+                <a class="text-decoration-none arrow-nav-link" href="#!">
+                    Sign up
                     <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
-                <h2 class="h4 fw-bolder">Join Events</h2>
-                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                <a class="text-decoration-none" href="#!">
-                    Call to action
+                <h2 class="h4 fw-bolder">Join events</h2>
+                <p>Browse events created by mums for mums. Find events near your place and/or connect virtually with other mums to listen and share your story.</p>
+                <a class="text-decoration-none arrow-nav-link" href="{{ url_for('get_events') }}">
+                    Browse events
                     <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
             <div class="col-lg-4">
                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                <h2 class="h4 fw-bolder">Start Sharing</h2>
-                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                <a class="text-decoration-none" href="#!">
-                    Call to action
+                <h2 class="h4 fw-bolder">Take Care</h2>
+                <p>According to mental health professionals, journaling is one of the most recommended tools to have a clearer mind and a happier life. Access to your personal journal in which you can daily reflect on your motherhood journey.</p>
+                <a class="text-decoration-none arrow-nav-link" href="#!">
+                    My journal
                     <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
