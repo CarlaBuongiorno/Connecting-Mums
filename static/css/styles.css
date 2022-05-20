@@ -7807,7 +7807,7 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #D5A021 !important;
 }
 
 .bg-secondary {
@@ -11309,3 +11309,12 @@ textarea.form-control-lg {
             border-color: #D5A021 !important;
             box-shadow: 0 0 0 0.2rem rgba(213,160,33, 0.5) !important;
         }
+  
+.arrow-nav-link {
+  color: #D5A021;
+
+}
+
+.social-nav-link {
+  color: #D5A021;
+}
