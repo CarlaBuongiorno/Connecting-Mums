@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connecting Mums</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
 
     <h2>I'm extending the base template</h2>
 
     {% for event in events %}
-        {{ events.event_name }}<br>
-        {{ events.event_day }}<br>
-        {{ events.event_time }}<br>
-        {{ events.event_place }}<br>
+        {{ event.event_name }}<br>
+        {{ event.event_day }}<br>
+        {{ event.event_time }}<br>
+        {{ event.event_place }}<br>
     {% endfor %}
 
-</body>
-</html>
+{% endblock %}
