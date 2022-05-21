@@ -97,6 +97,16 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/logout")
+def logout():
+    """
+    Remove user from session cookies. Render login page.
+    """
+    flash("You have been logged out", "success")
+    session.pop("user")
+    return redirect(url_for("home"))
+
+
 @app.route("/get_events")
 def get_events():
     """
