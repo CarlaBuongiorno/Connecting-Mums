@@ -23,6 +23,30 @@ shareTweet.addEventListener("click", tweetThis);
     "author": "Gretchen Rubin"
   },
   {
+    "quote": "Whatever you do, do with determination. You have one life to live; do your work with passion and give your best. Whether you want to be a chef, doctor, actor, or a mother, be passionate to get the best result.",
+    "author": "Alia Bhatt"
+  },
+  {
+    "quote": "No language can express the power and beauty and heroism of a mother’s love.",
+    "author": "Edwin Chapin"
+  },
+  {
+    "quote": "Motherhood has a very humanizing effect. Everything gets reduced to essentials.",
+    "author": "Meryl Streep"
+  },
+  {
+    "quote": "Motherhood is tough. If you just want a wonderful little creature to love, you can get a puppy.",
+    "author": "Barbara Walters"
+  },
+  {
+    "quote": "The fastest way to break the cycle of perfectionism and become a fearless mother is to give up the idea of doing it perfectly—indeed to embrace uncertainty and imperfection.",
+    "author": "Arianna Huffington"
+  },
+  {
+    "quote": "Successful mothers are not the ones that have never struggled. They are the ones that never give up, despite the struggles.",
+    "author": "Sharon Jaynes"
+  },
+  {
     "quote": "A mother continues to labor long after the baby is born.",
     "author": "Lisa Jo Baker"
   }
