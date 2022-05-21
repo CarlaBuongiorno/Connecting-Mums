@@ -11381,7 +11381,7 @@ header.masthead h1, header.masthead .h1 {
 }
 
 .txt-container button {
-    background: salmon;
+    background: #FA8072;
     border: 0;
     border-radius: 5px;
     padding: 10px 10px;
@@ -11390,7 +11390,6 @@ header.masthead h1, header.masthead .h1 {
     cursor: pointer;
     text-align: center;
     margin: 0 15px;
-    transition: background .5 ease-in-out;
     
 }
 
@@ -11404,18 +11403,18 @@ header.masthead h1, header.masthead .h1 {
 
 .txt-container i {
     color: white;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #author {
   color: salmon;
-  font-size: 30px;
-  font-family: 'Mrs Saint Delafield', cursive;
+  font-size: 15px;
+  font-family: 'Bellefair', cursive;
   margin: 15px 0 40px;
 }
 
 #quote {
-    color: #bc2065;
+    color: #BC2065;
     font-size: 20px;
     font-family: 'Bellefair', serif;
 }
@@ -11423,8 +11422,7 @@ header.masthead h1, header.masthead .h1 {
 @media only screen and (min-width: 480px) {
 
 	.txt-container button {
-		font-size: 24px;
-		padding: 10px 30px;
+		font-size: 18px;
 	}
 
   .txt-container {
@@ -11432,13 +11430,13 @@ header.masthead h1, header.masthead .h1 {
 	}
 
   #quote {
-      color: #bc2065;
-      font-size: 27px;
+      color: #BC2065;
+      font-size: 30px;
   }
   
   #author {
       color: #bc2065;
-      font-size: 45px;
+      font-size: 25px;
   }
 }
 

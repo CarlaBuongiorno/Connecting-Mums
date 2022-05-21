@@ -78,17 +78,33 @@
         <div class="col-lg-10 col-xl-7">
             <div class="text-center">
                 <div class="txt-container">
+                    <div class="col-lg-12 col-md-8 mx-auto mt-5">
                     <p id="quote"></p>
                     <p id="author"></p>
-                    <button type="button" onclick="tweetThis()"><i class="fa fa-twitter" aria-hidden="true"></i></button>
-                    <button type="button" onclick="generateQuote()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                    <button type="button" class="btn btn-secondary btn-md my-2 mt-5 ml-5" onclick="tweetThis()"><i class="fab fa-twitter" aria-hidden="true"></i>Share</button>
+                    <button type="button" class="btn btn-primary btn-md my-2 mt-5" onclick="generateQuote()"><i class="fab fa-refresh" aria-hidden="true"></i>Inspire me</button>
                   </div>
+                </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 </div>
-</div>
+
+<section class="bg-lightpy-2 text-center container-fluid">
+    <div class="row py-lg-5">
+      <div class="col-lg-12 col-md-8 mx-auto">
+        <div class="col-lg-12 col-md-8 mx-auto mt-5">
+          <p id="quote" class="lead fw-bold fst-italic mt-5" style="color:purple;"></p>
+          <p id="author" class="lead fw-bold fst-italic" style="color:purple;"></p>
+          <button type="button" class="lead btn btn-secondary btn-md my-2 mt-5 ml-5" onclick="tweetThis()" id="sharetweet"><i class="fa fa-twitter" aria-hidden="true"></i> Share </button>
+          <button type="button" class="lead btn btn-save btn-md my-2 mt-5" onclick="generateQuote()" id="quotegenerator"><i class="fa fa-refresh" aria-hidden="true"></i> Inspire me </button>
+        </div>
+      </div>
+    </div>
+</section>
+
 
 <!-- Tips -->
 <section class="py-5 border-bottom" id="features">
