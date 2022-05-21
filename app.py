@@ -7,7 +7,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
-    import env # nqa
+    import env  # nqa
 
 import dateutil.parser, datetime
 
@@ -78,6 +78,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!", "success")
+        return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
 
@@ -101,7 +102,7 @@ def login():
                 flash("Welcome, {}".format(
                     request.form.get("username")), "success")
                 return redirect(url_for(
-                    "home", username=session["user"]))
+                    "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password", "danger")
@@ -132,7 +133,7 @@ def get_events():
         display on 'Events' page.
     """
     if request.method == "POST":
-        #allows text search to happen, might just need to be moved to when items are added?
+        # allows text search to happen, might just need to be moved to when items are added?
         mongo.db.events.create_index(
             [
             ("event_name", "text"),
@@ -142,10 +143,10 @@ def get_events():
         events = mongo.db.events.find( { "$text": { "$search": request.form["query"] } } )
     else:
         events = mongo.db.events.find()
-    
-    events = events.sort("event_date") 
-    
-    #allows page to know if an event is in the past, and change display if so
+
+    events = events.sort("event_date")
+
+    # allows page to know if an event is in the past, and change display if so
     now = datetime.datetime.now()
     return render_template("events.html", events=events, now=now)
 
@@ -183,10 +184,10 @@ def attend_event(event_id):
     if session.get("user", "") == "":
         flash("please log in so we can know whos going")
         return redirect("/get_events")
-    
+
     mongo.db.events.update_one(
         {"_id": ObjectId(event_id)},
-        {"$addToSet": 
+        {"$addToSet":
             {"members_attending": session.get("user", "")}
         })
     return redirect("/get_events")
@@ -195,6 +196,14 @@ def attend_event(event_id):
 @app.template_filter('format_date')
 def formate_date(value, format="%d/%m/%y at %H:%M"):
     return value.strftime(format)
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # grab the session user's username from the db
+    username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+    return render_template("profile.html", username=username)
 
 
 if __name__ == "__main__":

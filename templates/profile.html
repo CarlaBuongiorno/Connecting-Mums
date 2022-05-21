@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section class="container">
+    <div class="row">
+        <div class="card col-12 col-md-8 offset-md-2" method="POST" action="{{ url_for('login') }}">
+            <div class="card-body">
+                    <h3 class="text-center mt-5 mb-4">{{ username.title() }}'s Profile</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
