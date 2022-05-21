@@ -6,10 +6,33 @@
     <div class="row">
         <div class="card col-12 col-md-8 offset-md-2" method="POST" action="{{ url_for('login') }}">
             <div class="card-body">
-                    <h3 class="text-center mt-5 mb-4">{{ username.title() }}'s Profile</h3>
+                    <h2 class="text-center mt-5 mb-4">{{ username.title() }}'s Profile</h2>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<section>
+    <div class="row mt-5">
+        <div class="col-6 px-5">
+            <h3>Attending Events</h3>
+            {% if session.user in event.members_attending %}
+                {% for event in events %}
+                    {{ event.event_name }}
+                    {{ event.event_description }}
+                    {{ event.event_place }}
+                    {{event.event_date|format_date }}
+                {% endfor %}
+            {% else %}
+                <p>You are not attending any events.</p>
+                <a href="#">Sign up for an event</a>
+            {% endif %}
+        </div>
+        <div class="col-6">
+            <h3>Created Events</h3>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
