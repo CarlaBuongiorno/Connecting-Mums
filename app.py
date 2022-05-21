@@ -8,6 +8,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env # nqa
 
+import dateutil.parser, datetime
+
 
 # Initialize app
 app = Flask(__name__)
@@ -114,7 +116,9 @@ def get_events():
         display on 'Events' page.
     """
     events = mongo.db.events.find()
-    return render_template("events.html", events=events)
+    events = events.sort("event_date")
+    now = datetime.datetime.now()
+    return render_template("events.html", events=events, now=now)
 
 
 @app.route("/new_event", methods=["GET", "POST"])
@@ -134,6 +138,8 @@ def new_event():
         event["event_owner"] = session.get("user", "")
         event["members_attending"] = []
         event["test_event"] = True
+        event["event_date"] = dateutil.parser.parse(event["event_date"])
+
         mongo.db.events.insert_one(event)
         flash(f"You have now created new event {event['event_name']}")
         return redirect("/get_events")
@@ -158,17 +164,9 @@ def attend_event(event_id):
 
 
 @app.template_filter('format_date')
-def formate_date(value):
-    if not value:
-        return "date not set"
-    dateTime = getDate(value)
-    date = dateTime["date"]
-    time = dateTime["time"]
-    return f"{date[2]}/{date[1]}/{date[0]} at {time}"
+def formate_date(value, format="%d/%m/%y at %H:%M"):
+    return value.strftime(format)
 
-def getDate(dateString):
-    dateTime = dateString.split("T")
-    return {"date": dateTime[0].split("-"), "time": dateTime[1]}
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

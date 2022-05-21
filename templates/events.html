@@ -13,6 +13,20 @@
             </div>
         </div>
         <div class="col-10 col-sm-8 col-lg-4">
+            {%if now > event.event_date %}
+            <div>
+                This event has happened!<br>
+                {%if event.members_attending|length == 1%}1 person {%else%}{{event.members_attending|length}}
+                people{%endif%} attended this event!
+            </div>
+            {%if session.user in event.members_attending%}
+            <div class="btn btn-primary btn-lg px-4 me-sm-3">You were here</div>
+            {%endif%}
+            {%else%}
+            <div>
+                {%if event.members_attending|length == 1%}1 person is{%else%}{{event.members_attending|length}} people
+                are{%endif%} attending this event!
+            </div>
             {%if not session.user %}
             <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{{ url_for('login') }}">Please Log in to be able to say
                 you're coming</a>
@@ -21,6 +35,7 @@
                 want to attend this event</a>
             {%else%}
             <div>Already attending event</div>
+            {%endif%}
             {%endif%}
         </div>
     </div>
