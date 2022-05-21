@@ -27,7 +27,6 @@
                     <li class="nav-item"><a class="nav-link" href="#!">My Account</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Logout</a></li>
                 {% else %}
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('register')}}">Register</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('register') }}">Register</a></li>
@@ -42,10 +41,13 @@
     {% endblock %}
 
 <!-- Footer-->
+
 <footer class="footer py-5 bg-dark">
-    <div class="row mr-5">
+    <div class="row">
         <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
-            <p class="m-0 text-center text-white">Copyright &copy; Connecting Mums 2022</p>
+            <p class="m-0 text-center text-white">Connecting Mums Support Hotline : 555-555-555</p>
+            <p class="m-0 text-center text-white">Available 24 hours a day, 7 days a week</p>
+            <p class="m-0 text-center text-white-50 mx-5">Copyright &copy; Connecting Mums 2022</p>
         </div>
         <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
             <ul class="list-inline mb-2">

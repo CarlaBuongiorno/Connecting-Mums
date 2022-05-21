@@ -2,14 +2,14 @@
 {% block content %}
 <!-- Header-->
 
-<img src="{{ url_for('static', filename='assets/img/hero.jpeg') }}" class="d-block w-100" alt="">
+<img src="{{ url_for('static', filename='assets/img/hero_2.jpeg') }}" class="d-block w-100" alt="">
 
 <header class="bg-dark py-5 bg-header">
-    <div class="container px-5 hero-home">
+    <div class="container-fluid px-5">
         <div class="row gx-5 justify-content-center">
-            <div class="col-lg-6 hero-home">
+            <div class="col-lg-6">
                 <div class="text-center my-5">
-                    <h1 class="display-5 fw-bolder text-white mb-2">Getting mums the support they need</h1>
+                    <h1 class="display-5 fw-bolder text-white mb-2">Getting mums together</h1>
                     <p class="lead text-white-50 mb-4">What if the "happiest time of your life" doesn't feel so happy. If you’re a mum suffering from anxiety and/or depression during pregnancy or after childbirth, you’re not alone. Meet other mums from around the world virtually or in real life and start sharing your story.</p>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                         <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{{ url_for('register') }}">Join us</a>
@@ -21,50 +21,71 @@
     </div>
 </header>
 
-<!-- Features section-->
-
-<section class="py-5 border-bottom" id="features">
-    <div class="container px-5 my-5">
-        <div class="row gx-5  text-center">
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-people"></i></div>
-                <h2 class="h4 fw-bolder">Be one of us</h2>
-                <p>What mums need most is their mental health. Sign up to join and create inspirational and supportive events and be part of the connecting mums community.</p>
-                <a class="text-decoration-none arrow-nav-link" href="{{ url_for('register') }}">
-                    Sign up
-                    <i class="bi bi-arrow-right"></i>
-                </a>
-            </div>
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-chat"></i></div>
-                <h2 class="h4 fw-bolder">Join events</h2>
-                <p>Browse events created by mums for mums. Find events near your place and/or connect virtually with other mums to listen and share your story.</p>
+<!-- How it work  -->
+<div class="container px-4 mt-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="{{ url_for('static', filename='assets/img/home_1.jpeg') }}" class="d-lg-block mx-lg-auto img-fluid" alt="Bootstrap Themes" style="width:700; height:500; border-radius: 2.5%;" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h2 class="fw-bold lh-1 mb-3">Be part of the community</h2>
+        <p class="lead">What mums need most is their mental health. Sign up to join and create inspirational and supportive events and be part of the connecting mums community.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a class="text-decoration-none arrow-nav-link" href="{{ url_for('register') }}">
+                Sign up
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5">
+        <div class="col-lg-6">
+            <h2 class="fw-bold lh-1 mb-3">Join events and meet wonderful mums</h2>
+            <p class="lead">Browse events created by mums for mums. Find events near your place and/or connect virtually with other mums to listen and share your story</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                 <a class="text-decoration-none arrow-nav-link" href="{{ url_for('get_events') }}">
                     Browse events
                     <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
-            <div class="col-lg-4">
-                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-heart"></i></div>
-                <h2 class="h4 fw-bolder">Take Care</h2>
-                <p>According to mental health professionals, journaling is one of the most recommended tools to have a clearer mind and a happier life. Access to your personal journal in which you can daily reflect on your motherhood journey.</p>
-                <a class="text-decoration-none arrow-nav-link" href="#!">
-                    My journal
-                    <i class="bi bi-arrow-right"></i>
-                </a>
-            </div>
         </div>
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="{{ url_for('static', filename='assets/img/home_2.jpeg') }}" class="d-lg-block mx-lg-auto img-fluid" alt="Bootstrap Themes" style="width:700; height:500; border-radius: 2.5%;" loading="lazy">
+      </div>
     </div>
-</section>
+  </div>
+  <div class="container px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="{{ url_for('static', filename='assets/img/home_3.jpeg') }}" class="d-lg-block mx-lg-auto img-fluid" alt="Bootstrap Themes" style="width:700; height:500; border-radius: 2.5%;" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h2 class="fw-bold lh-1 mb-3">Take care of yourself</h2>
+        <p class="lead">According to mental health professionals, journaling is one of the most recommended tools to have a clearer mind and a happier life. Access to your personal journal in which you can daily reflect on your motherhood journey.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a class="text-decoration-none arrow-nav-link" href="#!">
+                My journal
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<!-- Upcoming events-->
+  <hr>
+
+  <!-- Upcoming events-->
 <section class="py-5">
     <div class="container px-5 my-5">
         <div class="row gx-5 justify-content-center">
             <div class="col-lg-8 col-xl-6">
                 <div class="text-center">
-                    <h2 class="fw-bolder">Upcoming Events</h2>
-                    <p class="lead fw-normal text-muted mb-5"> Create a function to show only 3 upcoming events</p>
+                    <div class="text-center">
+                        <h1 class="fw-bolder mb-5">Upcoming events</h1>
+                        <p class="lead fw-normal text-muted mb-5">Create a function to show only the 3 upcoming events</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -100,15 +121,47 @@
     </div>
 </section>
 
-    <!-- About-->
-        <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5">
-            <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
-                <div class="mb-4 mb-xl-0">
-                    <div class="fs-4 fw-bold text-white">Connecting Mums Support Hotline</div>
-                    <div class="fs-5 fw-bold text-white">555-555-555</div>
-                    <div class="text-white-50">Available 24 hours a day, 7 days a week</div>
-                </div>
+<hr>
+<!-- Tips -->
+<section class="py-5 border-bottom" id="features">
+    <div class="container px-5 my-5">
+        <div class="row gx-5 text-center">
+            <div class="text-center">
+                <h1 class="fw-bolder mb-5">The Mummy Cheat Codes</h1>
+                <p class="lead fw-normal text-muted mb-5"> </p>
             </div>
-        </aside>
+            <div class="col-lg-4 mt-5 mb-5 mb-lg-2">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-alarm"></i></div>
+                <h2 class="h4 fw-bolder">Get enough sleep</h2>
+                <p class="text-left"> For a mother with young children, sleep may seem like a sweet, distant memory but it needs to be a priority. Just think about how cranky your toddler is when they don’t get a nap; adults need sleep just as much. And, even though long stretches of uninterrupted slumber is best (seven hours a night), any way you can get rest helps.</p>
+            </div>
+            <div class="col-lg-4 mt-5 mb-5 mb-lg-2">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-droplet"></i></div>
+                <h2 class="h4 fw-bolder">Drink plenty of water</h2>
+                <p>How many days have you realized you didn’t drink one glass of water? Either you were too busy or simply downed cups of coffee to keep you going. Drinking water helps keeps you healthy. water helps keep your body temperature normal, lubricates and cushions your joints, protects your spinal cord and gets rid of wastes.</p>
+            </div>
+            <div class="col-lg-4 mt-5 mb-5 mb-lg-2">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-bicycle"></i></div>
+                <h2 class="h4 fw-bolder">Take time to exercise</h2>
+                <p>It seems contradictory to add one more obligation to an already jam-packed day but taking time to exercise, even if it is at 5 in the morning, is one of the best ways to take care of yourself. Having a couple of hours a week just to yourself does wonders for your body and mind, like improving your mood, boosting energy and improving your sleep.</p>
+            </div>
+            <div class="col-lg-4 mt-5 mb-5 mb-lg-2">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-heart"></i></div>
+                <h2 class="h4 fw-bolder">Give yourself ‘Me’ time</h2>
+                <p>Even though your children are the center of your world, you still need a break from them. Can you imagine if you never left your desk job? Never took a break? You’d eventually start to crack. Finding ‘me’ time can be as small as locking the bathroom door for a bath to going away for the weekend for a girls’ trip.</p>
+            </div>
+            <div class="col-lg-4 mt-5 mb-5 mb-lg-2">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-emoji-smile"></i></div>
+                <h2 class="h4 fw-bolder">Stop feeling guilty about doing nothing.</h2>
+                <p>We tend to link our productivity to our self-worth, so when we do nothing, we feel guilty, even if it is much-needed relaxation. Remind yourself that “wasting time” is also productive.</p>
+            </div>
+            <div class="col-lg-4 mt-5 mb-5 mb-lg-2">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-calendar-check"></i></div>
+                <h2 class="h4 fw-bolder">Keep all your well-woman appointments.</h2>
+                <p>You brought your children to every milestone appointment like clockwork, afford yourself the same care. Well-woman appointments allow you to not only speak to your physician about physical issues but your mental state as well, like stress, mood swings or depression.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
