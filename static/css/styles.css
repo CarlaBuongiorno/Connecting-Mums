@@ -3943,7 +3943,7 @@ textarea.form-control-lg {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: #0d6efd;
+  color: #BC2065;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
@@ -3953,16 +3953,16 @@ textarea.form-control-lg {
   }
 }
 .nav-link:hover, .nav-link:focus {
-  color: #0a58ca;
+  color: #FA8072;
 }
 .nav-link.disabled {
-  color: #6c757d;
+  color: #FA8072;
   pointer-events: none;
   cursor: default;
 }
 
 .nav-tabs {
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid #FA8072;
 }
 .nav-tabs .nav-link {
   margin-bottom: -1px;
@@ -4000,7 +4000,7 @@ textarea.form-control-lg {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #0d6efd;
+  background-color: #FA8072;
 }
 
 .nav-fill > .nav-link,
@@ -11369,8 +11369,18 @@ header.masthead h1, header.masthead .h1 {
 /* FOOTER */
 
 .social-nav-link {
-  color: #D5A021;
+  color: #fa8072;
 }
+
+.social-nav-link:hover {
+  color: white;
+}
+
+.social-nav-link:active {
+  color: white;
+}
+
+
 
 #dev-names {
   display: flex;
@@ -11384,22 +11394,13 @@ header.masthead h1, header.masthead .h1 {
 	width: 95vw;
 }
 
-.txt-container button {
-    background: salmon;
-    border: 0;
-    border-radius: 5px;
-    padding: 10px 10px;
-    width: 85px;
-    height: 50px;
-    cursor: pointer;
-    text-align: center;
-    margin: 0 15px;
-    transition: background .5 ease-in-out;
-    
-}
 
 .txt-container button:hover{
     background: #FA8072;
+}
+
+.txt-container button:active{
+  background: #FA8072;
 }
 
 .txt-container p {
@@ -11408,18 +11409,18 @@ header.masthead h1, header.masthead .h1 {
 
 .txt-container i {
     color: white;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #author {
   color: salmon;
-  font-size: 30px;
-  font-family: 'Mrs Saint Delafield', cursive;
+  font-size: 15px;
+  font-family: 'Bellefair', cursive;
   margin: 15px 0 40px;
 }
 
 #quote {
-    color: #bc2065;
+    color: #BC2065;
     font-size: 20px;
     font-family: 'Bellefair', serif;
 }
@@ -11427,8 +11428,7 @@ header.masthead h1, header.masthead .h1 {
 @media only screen and (min-width: 480px) {
 
 	.txt-container button {
-		font-size: 24px;
-		padding: 10px 30px;
+		font-size: 18px;
 	}
 
   .txt-container {
@@ -11436,13 +11436,13 @@ header.masthead h1, header.masthead .h1 {
 	}
 
   #quote {
-      color: #bc2065;
-      font-size: 27px;
+      color: #BC2065;
+      font-size: 30px;
   }
   
   #author {
       color: #bc2065;
-      font-size: 45px;
+      font-size: 25px;
   }
 }
 
