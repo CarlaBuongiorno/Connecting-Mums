@@ -11372,6 +11372,10 @@ header.masthead h1, header.masthead .h1 {
   color: #D5A021;
 }
 
+#dev-names {
+  display: flex;
+  justify-content: space-evenly;
+}
 
 /* Quote */
 
