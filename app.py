@@ -232,8 +232,9 @@ def profile(username):
     # grab the session user's username from the db
     username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
+    events = mongo.db.events.find()
 
-    return render_template("profile.html", username=username)
+    return render_template("profile.html", username=username, events=events)
 
 
 if __name__ == "__main__":

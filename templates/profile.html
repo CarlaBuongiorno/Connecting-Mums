@@ -6,31 +6,62 @@
     <div class="row">
         <div class="card col-12 col-md-8 offset-md-2" method="POST" action="{{ url_for('login') }}">
             <div class="card-body">
-                    <h2 class="text-center mt-5 mb-4">{{ username.title() }}'s Profile</h2>
-                </div>
+                <h2 class="text-center mt-5 mb-4">{{ username.title() }}'s Profile</h2>
             </div>
         </div>
     </div>
+    </div>
 </section>
+
+
+
+
+
 
 <section>
     <div class="row mt-5">
         <div class="col-6 px-5">
-            <h3>Attending Events</h3>
-            {% if session.user in event.members_attending %}
-                {% for event in events %}
-                    {{ event.event_name }}
-                    {{ event.event_description }}
-                    {{ event.event_place }}
-                    {{event.event_date|format_date }}
-                {% endfor %}
-            {% else %}
-                <p>You are not attending any events.</p>
-                <a href="#">Sign up for an event</a>
-            {% endif %}
+            <div class="row">
+                <div class="col-6">
+                    <h3>Attending:</h3>
+                </div>
+                <div class="col-6">
+                    <a class="btn btn-primary btn-md" href="{{ url_for('get_events') }}">Explore Events</a>
+                </div>
+            </div>
+            <hr>
+            {% for event in events %}
+            <!-- Find users saved events -->
+                {% if username in event.members_attending %}
+                    <p class="text-muted">{{event.event_date|format_date }}</p>
+                    <h5>{{ event.event_name }}</h5>
+                    <p class="text-muted">{{ event.event_description }}</p>
+                    <p class="text-muted">{{ event.event_place }}</p>
+                    <hr>
+                {% endif %}     
+            {% endfor %}
         </div>
         <div class="col-6">
-            <h3>Created Events</h3>
+            <div class="row">
+                <div class="col-6">
+                    <h3>Events Created:</h3>
+                </div>
+                <div class="col-6">
+                    <a class="btn btn-primary btn-md" href="{{ url_for('new_event') }}">Create Event</a>
+                </div>
+            </div>
+            <hr>
+            {% for event in events %}
+            <!-- Find users created events -->
+            {% if username == event.event_owner %}
+            <hr>
+            {{event.event_date|format_date }}
+            <hr>
+                {{ event.event_name }}
+                {{ event.event_description }}
+                {{ event.event_place }}
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
 </section>
