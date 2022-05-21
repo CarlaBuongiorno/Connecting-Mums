@@ -1,5 +1,6 @@
 import os
 import re
+from functools import wraps
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -21,6 +22,23 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
+
+def login_required(f):
+    """
+        Page is only accessed if user is logged in
+        @login_required decorator
+        https://flask.palletsprojects.com/en/2.0.x/patterns/viewdecorators/#login-required-decorator
+    """
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        # no "user" in session
+        if "user" not in session:
+            flash("You must log in to view this page", "danger")
+            return redirect(url_for("login"))
+        # user is in session
+        return f(*args, **kwargs)
+    return decorated_function
 
 
 @app.route("/")
@@ -152,6 +170,7 @@ def get_events():
 
 
 @app.route("/new_event", methods=["GET", "POST"])
+@login_required
 def new_event():
     '''
     Create a new event by the user
@@ -177,6 +196,7 @@ def new_event():
 
 
 @app.route("/attend_event/<event_id>")
+@login_required
 def attend_event(event_id):
     '''
     Allows a user to say they want to attend a given event
@@ -199,6 +219,7 @@ def formate_date(value, format="%d/%m/%y at %H:%M"):
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
+@login_required
 def profile(username):
     # grab the session user's username from the db
     username = mongo.db.users.find_one(
