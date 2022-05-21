@@ -109,14 +109,27 @@ def logout():
     return redirect(url_for("home"))
 
 
-@app.route("/get_events")
+@app.route("/get_events", methods=["GET", "POST"])
 def get_events():
     """
         Get all events in the database to
         display on 'Events' page.
     """
-    events = mongo.db.events.find()
-    events = events.sort("event_date")
+    if request.method == "POST":
+        #allows text search to happen, might just need to be moved to when items are added?
+        mongo.db.events.create_index(
+            [
+            ("event_name", "text"),
+            ("event_description", "text"),
+            ("event_place", "text"),
+            ])
+        events = mongo.db.events.find( { "$text": { "$search": request.form["query"] } } )
+    else:
+        events = mongo.db.events.find()
+    
+    events = events.sort("event_date") 
+    
+    #allows page to know if an event is in the past, and change display if so
     now = datetime.datetime.now()
     return render_template("events.html", events=events, now=now)
 
