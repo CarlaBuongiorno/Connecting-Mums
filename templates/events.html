@@ -24,37 +24,37 @@
                 <h2 class="fw-bold lh-1 mb-3 text-center text-lg-start">{{ event.event_name }}</h2>
                 <p class="lead">{{ event.event_description }}</p>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    {{ event.event_place }} - {{event.event_date|format_date }}
+                    {{ event.event_place }} - {{ event.event_date|format_date }}
                 </div>
             </div>
             <div class="col-10 col-sm-8 col-lg-4">
-                {%if now > event.event_date %}
+                {% if now > event.event_date %}
                 <div>
                     This event has happened!<br>
-                    {%if event.members_attending|length == 1%}1 person {%else%}{{event.members_attending|length}}
-                    people{%endif%} attended this event!
+                    {% if event.members_attending|length == 1 %}1 person {% else %}{{event.members_attending|length }}
+                    people{% endif %} attended this event!
                 </div>
-                {%if session.user in event.members_attending%}
+                {% if session.user in event.members_attending %}
                 <div class="btn btn-primary btn-lg px-4 me-sm-3">You were here</div>
-                {%endif%}
-                {%else%}
+                {% endif %}
+                {% else %}
                 <div>
-                    {%if event.members_attending|length == 1%}1 person is{%else%}{{event.members_attending|length}}
+                    {% if event.members_attending|length == 1 %}1 person is{% else %}{{ event.members_attending|length }}
                     people
-                    are{%endif%} attending this event!
+                    are{% endif %} attending this event!
                 </div>
                 {%if not session.user %}
                 <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{{ url_for('login') }}">Please Log in to be able to
                     say
                     you're coming</a>
-                {%elif session.user not in event.members_attending%}
+                {% elif session.user not in event.members_attending %}
                 <a class="btn btn-primary btn-lg px-4 me-sm-3"
                     href="{{ url_for('attend_event', event_id=event._id) }}">I
                     want to attend this event</a>
-                {%else%}
+                {% else %}
                 <div>Already attending event</div>
-                {%endif%}
-                {%endif%}
+                {% endif %}
+                {% endif %}
             </div>
         </div>
         {% if not loop.last %}
