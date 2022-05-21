@@ -22,10 +22,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('get_events') }}">Events</a></li>
                 {% if session.user %}
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('get_events') }}">Events</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">My Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">My Account</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
                 {% else %}
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('register') }}">Register</a></li>
