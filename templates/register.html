@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 class="text-center heading">Register</h2>
+    <h2 class="text-center heading">Register</h2>
 
     <section class="container">
         <div class="row">
@@ -65,11 +65,9 @@
                             </div>
                         </div>
                         <!-- register -->
-                        <div class="row d-flex justify-content-center mt-4 mb-3">
+                        <div class="row d-flex justify-content-center mt-4 mb-3 mx-0">
                             <div class="d-grid col-lg-4 text-center">
-                                <button class="btn btn-success" type="submit">
-                                    Register <i class="fas fa-sign-in-alt"></i>
-                                </button>
+                                <a class="btn btn-primary btn-lg px-4" href="{{ url_for('register') }}">Sign Up</a>
                             </div>
                         </div>
                     </div>
@@ -82,7 +80,10 @@
         <div class="col-12">
             <p class="text-center">
                 Already Registered? 
-                <a href="{{ url_for('login') }}" class="text-success">Log In</a>
+                <a class="text-decoration-none arrow-nav-link" href="{{ url_for('login') }}">
+                    Log In
+                    <i class="bi bi-arrow-right"></i>
+                </a>
             </p>
         </div>
     </section>
