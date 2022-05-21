@@ -47,13 +47,8 @@
                 </div>
                 {%if not session.user %}
                 <a class="btn btn-primary btn-md px-4 me-sm-3 mt-2" href="{{ url_for('login') }}">Participate</a>
-<<<<<<< HEAD
-                <a class="btn btn-primary btn-md px-4 me-sm-3"
-                {% elif session.user not in event.members_attending %}
-=======
                 {% elif session.user not in event.members_attending %}
                 <a class="btn btn-primary btn-lg px-4 me-sm-3"
->>>>>>> cd00c29c146cc40cf5801b3393329e5ea357beca
                     href="{{ url_for('attend_event', event_id=event._id) }}">I
                     want to attend this event</a>
                 {% else %}
