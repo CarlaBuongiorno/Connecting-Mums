@@ -11296,21 +11296,52 @@ textarea.form-control-lg {
   font-size: 2rem;
 }
 
-/* personalized button*/
+/* Personalized CSS*/
 
-/* HOME */
+/* HEADER */
 
-.hero-home {
-  background:url('assets/img/hero_2.jpeg');
-  background-blend-mode: multiply;
+header.masthead {
+  position: relative;
+  background-color: #343a40;
+  background: url("/static/assets/img/hero_2.jpeg") no-repeat center center;
   background-size: cover;
-  min-height: 250px;
-  height: 100vh;
-  
-  display: flex;
-  flex-direction :column;
-  align-items: center;
-  justify-content :center
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+header.masthead:before {
+  content: "";
+  position: absolute;
+  background-color: #1c375e;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+header.masthead h1, header.masthead .h1 {
+  font-size: 2rem;
+}
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  header.masthead h1, header.masthead .h1 {
+    font-size: 3rem;
+  }
+}
+
+.showcase .showcase-text {
+  padding: 3rem;
+}
+.showcase .showcase-img {
+  min-height: 30rem;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .showcase .showcase-text {
+    padding: 7rem;
+  }
 }
 
 /* BUTTON */
@@ -11331,7 +11362,7 @@ textarea.form-control-lg {
 /* NAVBAR */
         
 .arrow-nav-link {
-  color: #BC2065;
+  color: #fa8072;
 
 }
 
@@ -11341,4 +11372,73 @@ textarea.form-control-lg {
   color: #D5A021;
 }
 
+
+/* Quote */
+
+.txt-container {
+	margin: 0px auto;
+	width: 95vw;
+}
+
+.txt-container button {
+    background: salmon;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px 10px;
+    width: 85px;
+    height: 50px;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 15px;
+    transition: background .5 ease-in-out;
+    
+}
+
+.txt-container button:hover{
+    background: #FA8072;
+}
+
+.txt-container p {
+	line-height: 1.3;
+}
+
+.txt-container i {
+    color: white;
+    font-size: 30px;
+}
+
+#author {
+  color: salmon;
+  font-size: 30px;
+  font-family: 'Mrs Saint Delafield', cursive;
+  margin: 15px 0 40px;
+}
+
+#quote {
+    color: #bc2065;
+    font-size: 20px;
+    font-family: 'Bellefair', serif;
+}
+
+@media only screen and (min-width: 480px) {
+
+	.txt-container button {
+		font-size: 24px;
+		padding: 10px 30px;
+	}
+
+  .txt-container {
+		width: 70vw;
+	}
+
+  #quote {
+      color: #bc2065;
+      font-size: 27px;
+  }
+  
+  #author {
+      color: #bc2065;
+      font-size: 45px;
+  }
+}
 
