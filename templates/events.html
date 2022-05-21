@@ -19,4 +19,57 @@
     {% endfor %}
 </ul>
 
+
+<!-- Upcoming events / suggestion of display for Eva (to be updated or removed) -->
+
+<section class="py-5">
+    <div class="container px-5 my-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-8 col-xl-6">
+                <div class="text-center">
+                    <div class="text-center">
+                        <h1 class="fw-bolder mb-5">Upcoming events</h1>
+                        <p class="lead fw-normal text-muted mb-5"> Create search function + display events</p>
+                        <form class="d-flex" action="" method="POST">
+                            <input class="form-control me-2 validate mt-5" name="query" id="query" type="search" placeholder="Search events" aria-label="Search" required>
+                            <a href="{{ url_for('get_events') }}" class="btn btn-secondary mt-5">Reset</a>
+                            <button class="btn btn-outline-light mt-5" style="color:whitesmoke" type="submit">Submit</button>
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% for event in events %}
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-5">
+                <div class="card h-100 shadow border-0">
+                    <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="event_image" />
+                    <div class="card-body p-4">
+                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">{{ event.event_place }}</div>
+                        <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">{{ event.event_name}}</h5></a>
+                        <p class="card-text mb-0">{{ event.event_description }}</p>
+                    </div>
+                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                                <div class="small">
+                                    <div class="text-muted">{{ event.event_date }}</div>
+                                    {%if session.user not in event.members_attending%}
+                                        <a href="{{ url_for('attend_event', event_id=event._id) }}">I want to attend this event</a>
+                                    {%else%}
+                                        <div>Already attending event</div>
+                                    {%endif%}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+
 {% endblock %}

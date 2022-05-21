@@ -1,14 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- Header-->
-
-<img src="{{ url_for('static', filename='assets/img/hero_2.jpeg') }}" class="d-block w-100" alt="">
-
-<header class="bg-dark py-5 bg-header">
-    <div class="container-fluid px-5">
-        <div class="row gx-5 justify-content-center">
-            <div class="col-lg-6">
-                <div class="text-center my-5">
+<header class="masthead">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-white my-5">
                     <h1 class="display-5 fw-bolder text-white mb-2">Getting mums together</h1>
                     <p class="lead text-white-50 mb-4">What if the "happiest time of your life" doesn't feel so happy. If you’re a mum suffering from anxiety and/or depression during pregnancy or after childbirth, you’re not alone. Meet other mums from around the world virtually or in real life and start sharing your story.</p>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
@@ -21,7 +18,7 @@
     </div>
 </header>
 
-<!-- How it work  -->
+<!-- How it works  -->
 <div class="container px-4 mt-5">
     <div class="row flex-lg-row-reverse align-items-center g-5">
       <div class="col-10 col-sm-8 col-lg-6">
@@ -74,54 +71,25 @@
     </div>
   </div>
 
-  <hr>
-
-  <!-- Upcoming events-->
-<section class="py-5">
-    <div class="container px-5 my-5">
-        <div class="row gx-5 justify-content-center">
-            <div class="col-lg-8 col-xl-6">
-                <div class="text-center">
-                    <div class="text-center">
-                        <h1 class="fw-bolder mb-5">Upcoming events</h1>
-                        <p class="lead fw-normal text-muted mb-5">Create a function to show only the 3 upcoming events</p>
-                    </div>
+<!-- Daily Quote -->
+<div class="bg-light py-5">
+<div class="container px-5 my-5">
+    <div class="row gx-5 justify-content-center">
+        <div class="col-lg-10 col-xl-7">
+            <div class="text-center">
+                <div class="txt-container">
+                    <p id="quote"></p>
+                    <p id="author"></p>
+                    <button type="button" onclick="tweetThis()"><i class="fa fa-twitter" aria-hidden="true"></i></button>
+                    <button type="button" onclick="generateQuote()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                  </div>
                 </div>
             </div>
         </div>
-        {% for event in events %}
-        <div class="row gx-5">
-            <div class="col-lg-4 mb-5">
-                <div class="card h-100 shadow border-0">
-                    <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="event_image" />
-                    <div class="card-body p-4">
-                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">{{ event.event_place }}</div>
-                        <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">{{ event.event_name}}</h5></a>
-                        <p class="card-text mb-0">{{ event.event_description }}</p>
-                    </div>
-                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                        <div class="d-flex align-items-end justify-content-between">
-                            <div class="d-flex align-items-center">
-                                <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                <div class="small">
-                                    <div class="text-muted">{{ event.event_date }}</div>
-                                    {%if session.user not in event.members_attending%}
-                                        <a href="{{ url_for('attend_event', event_id=event._id) }}">I want to attend this event</a>
-                                    {%else%}
-                                        <div>Already attending event</div>
-                                    {%endif%}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
     </div>
-</section>
+</div>
+</div>
 
-<hr>
 <!-- Tips -->
 <section class="py-5 border-bottom" id="features">
     <div class="container px-5 my-5">
