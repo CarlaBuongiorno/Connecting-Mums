@@ -234,7 +234,7 @@ def profile(username):
             {"username": session["user"]})["username"]
     events = mongo.db.events.find()
 
-    return render_template("profile.html", username=username, events=events)
+    return render_template("profile.html", username=username, events=list(events))
 
 
 if __name__ == "__main__":
