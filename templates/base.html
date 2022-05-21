@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" type="text/css" />
-    <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
     <title>Connecting Mums</title>
 </head>
@@ -39,7 +35,7 @@
     </div>
 </nav>
 
-<!-- flash messages -->
+<!-- Flash messages -->
 {% with messages = get_flashed_messages() %}
 {% if messages %}
     {% for message in messages %}
@@ -55,7 +51,6 @@
     {% endblock %}
 
 <!-- Footer-->
-
 <footer class="footer py-5 bg-dark">
     <div class="row mb-4">
         <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
@@ -63,22 +58,22 @@
             <p class="m-0 text-center text-white">Available 24 hours a day, 7 days a week</p>
         </div>
         <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
-            <ul class="list-inline mb-2">
-                <li class="list-inline-item social-nav-link">
+            <ul class="list-inline mt-2 mb-2 mr-sm-5">
+                <li class="list-inline-item">
                   <a target="_blank" href="https://www.facebook.com/Code.InstituteIRL">
-                    <i class="fab fa-facebook fa-2x" aria-hidden="true"></i>
+                    <i class="fab fa-facebook fa-2x social-nav-link" aria-hidden="true"></i>
                     <span class="sr-only">Facebook</span>
                   </a>
                 </li>
                 <li class="list-inline-item social-nav-link ">
                   <a target="_blank" href="https://twitter.com/">
-                    <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
+                    <i class="fab fa-twitter fa-2x social-nav-link" aria-hidden="true"></i>
                     <span class="sr-only">Twitter</span>
                   </a>
                 </li>
                 <li class="list-inline-item social-nav-link">
                   <a target="_blank" href="https://www.instagram.com/">
-                    <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+                    <i class="fab fa-instagram fa-2x social-nav-link" aria-hidden="true"></i>
                     <span class="sr-only">Instagram</span>
                   </a>
                 </li>
@@ -88,34 +83,29 @@
     <div class="row mb-4">
         <div class="col" id="dev-names">
             <div class="col-sm-6 col-md-3 text-center">
-                <a href="https://github.com/CarlaBuongiorno" class="dev" rel="noopener" target="_blank">Carla Buongiorno</a><br>
+                <a href="https://github.com/CarlaBuongiorno" class="dev social-nav-link" rel="noopener" target="_blank">Carla Buongiorno</a><br>
             </div>
             <div class="col-sm-6 col-md-3 text-center">
-                <a href="https://github.com/florencemezino" class="dev" rel="noopener" target="_blank">Florence Mezino</a><br>
+                <a href="https://github.com/florencemezino" class="dev social-nav-link" rel="noopener" target="_blank">Florence Mezino</a><br>
             </div>
             <div class="col-sm-6 col-md-3 text-center">
-                <a href="https://github.com/EonTAS" class="dev" rel="noopener" target="_blank">Martin Oglesby</a><br>
+                <a href="https://github.com/EonTAS" class="dev social-nav-link" rel="noopener" target="_blank">Martin Oglesby</a><br>
             </div>
             <div class="col-sm-6 col-md-3 text-center">
-                <a href="https://github.com/Sorin05" class="dev" rel="noopener" target="_blank">Sorin Andrei</a>
+                <a href="https://github.com/Sorin05" class="dev social-nav-link" rel="noopener" target="_blank">Sorin Andrei</a>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <p class="m-0 text-center text-white-50 mx-5">Copyright &copy; Connecting Mums 2022</p>
+            <p class="m-0 text-center text-white-50 mx-5">Copyright &copy; Connecting Mums - Hackathon May 2022</p>
         </div>
     </div>
 
 </footer>
-<!-- Bootstrap core JS-->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
 <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
 </body>
