@@ -1,4 +1,5 @@
 import os
+import re
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -31,9 +32,6 @@ def home():
     return render_template("home.html")
 
 
-
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """
@@ -50,6 +48,24 @@ def register():
 
         if existing_user:
             flash("Username already exists")
+            return redirect(url_for("register"))
+
+        # check if passwords match
+        password = request.form.get("password")
+        confirm_password = request.form.get("confirm-password")
+
+        if password != confirm_password:
+            flash("Your passwords don't match", "danger")
+            return redirect(url_for("register"))
+
+        # check if password conforms to pattern
+        is_digit = re.compile(r"[0-9]")
+        is_lower = re.compile(r"[a-z]")
+        is_upper = re.compile(r"[A-Z]")
+
+        if is_digit.search(password) is None or \
+            is_lower.search(password) is None or \
+                is_upper.search(password) is None:
             return redirect(url_for("register"))
 
         register_user = {
