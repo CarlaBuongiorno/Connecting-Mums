@@ -1,6 +1,8 @@
 import os
+import datetime
 import re
 from functools import wraps
+import dateutil.parser
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -9,8 +11,6 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env  # nqa
-
-import dateutil.parser, datetime
 
 
 # Initialize app
@@ -89,7 +89,9 @@ def register():
         register_user = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "email": request.form.get("email")
+            "email": request.form.get("email"),
+            "attending_events": [],
+            "created_events": []
         }
         mongo.db.users.insert_one(register_user)
 
@@ -151,14 +153,16 @@ def get_events():
         display on 'Events' page.
     """
     if request.method == "POST":
-        # allows text search to happen, might just need to be moved to when items are added?
+        # allows text search to happen, might just need to be
+        # moved to when items are added?
         mongo.db.events.create_index(
             [
-            ("event_name", "text"),
-            ("event_description", "text"),
-            ("event_place", "text"),
+                ("event_name", "text"),
+                ("event_description", "text"),
+                ("event_place", "text"),
             ])
-        events = mongo.db.events.find( { "$text": { "$search": request.form["query"] } } )
+        events = mongo.db.events.find(
+            {"$text": {"$search": request.form["query"]}})
     else:
         events = mongo.db.events.find()
 
@@ -208,8 +212,8 @@ def attend_event(event_id):
     mongo.db.events.update_one(
         {"_id": ObjectId(event_id)},
         {"$addToSet":
-            {"members_attending": session.get("user", "")}
-        })
+            {"members_attending": session.get("user", "")}}
+        )
     return redirect("/get_events")
 
 
@@ -221,9 +225,14 @@ def formate_date(value, format="%d/%m/%y at %H:%M"):
 @app.route("/profile/<username>", methods=["GET", "POST"])
 @login_required
 def profile(username):
+    """
+        Get username from db. Render profile page. Find user's attending
+        events and created events to display on profile page..
+    """
     # grab the session user's username from the db
     username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
+
     return render_template("profile.html", username=username)
 
 
