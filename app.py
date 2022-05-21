@@ -135,7 +135,7 @@ def new_event():
         event["members_attending"] = []
         event["test_event"] = True
         mongo.db.events.insert_one(event)
-        flash(f"You have now created new event {event[event_name]}")
+        flash(f"You have now created new event {event['event_name']}")
         return redirect("/get_events")
     return render_template("events_form.html")
 
@@ -155,6 +155,20 @@ def attend_event(event_id):
             {"members_attending": session.get("user", "")}
         })
     return redirect("/get_events")
+
+
+@app.template_filter('format_date')
+def formate_date(value):
+    if not value:
+        return "date not set"
+    dateTime = getDate(value)
+    date = dateTime["date"]
+    time = dateTime["time"]
+    return f"{date[2]}/{date[1]}/{date[0]} at {time}"
+
+def getDate(dateString):
+    dateTime = dateString.split("T")
+    return {"date": dateTime[0].split("-"), "time": dateTime[1]}
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
