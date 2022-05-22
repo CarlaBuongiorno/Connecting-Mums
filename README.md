@@ -1,6 +1,6 @@
 # Connecting-Mums 
 
-[View the live project here]()
+[View the live project here](https://connecting-mums.herokuapp.com/)
 
 ![Connecting-Mums](static/assets/img/)
 
@@ -50,25 +50,25 @@ c. Restraints
 
 ### User stories
 
-1. First Time Visitor Goals (forum / about)
+1. First Time Visitor Goals 
 
-* As a mother I want to read experiences about motherhood so that I can approach it in a knowledgeable way and be prepared to raise a child, cope with a sick kid or a loss.
+* As a mother I want to hear about experiences around motherhood so that I can approach it in a knowledgeable way and be prepared to raise a child, cope with a sick kid or a loss.
 * As a mother I want to be able to interact and give support to mothers in needs so that I can feel that I am helping out mothers goign through a difficult time
 * As a mother I want to share my own experience so that I have the feeling to contribute in a better future for our children
 * As a mother I want learn about good practices in terms of vitamins intakes, excersing, doctor visits etc. so that I can have greats tips on how to take of my mental health during this special time
 * As a mother I want to know about organizations / associations that I can reach out so that if I am in need of further helps I can reach to profesionnals.
 
-2. Returning Visitors Goals (events)
+2. Returning Visitors Goals
 
 * As a mother I want to meet other mothers from the comfort of my home so that I can still connect, have a social life and learn from other mothers remotely.
 * As a mother I want to meet other mothers in real life close to my home / in my neighborhood so that my children can have playdates and I can interact in real life
 * As a mother I want to organize events about motherhood so that I can meet and inspire other mothers to take care of their mental health.
 
 
-3. Frequent User Goals (journaling / newsletter / quotes)
+3. Frequent User Goals
 
 * As a mother I want to have a personal space in which I can daily write my ups and downs so that it helps me be more grateful and cope with difficult times that brings motherhood.
-* As a mother I want to be aware of trending topics around motherhood so that I better myself and my community
+* As a mother I want to be aware of trending topics around motherhood so that I can better help myself and my community
 * As a mother I want to be inspired by daily quotes so that it reassures me in my role of mother
 
 ### Design
