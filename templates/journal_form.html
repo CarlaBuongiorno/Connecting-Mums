@@ -1,29 +1,26 @@
 {% block content %}
-
-<h4>3 things I am grateful for today :</h4>
 <section id="form">
-    <form method="POST" action="">
-        <div class="input-field">
-            <label for="gratitude_date"> Date : </label>
-            <input id="gratitude_date" name="gratitude_date" type="datetime-local" required>
+    <form method="POST" action="{{url_for('new_gratitude')}}">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="gratitude_date">Date : </label>
+              <input id="gratitude_date" name="gratitude_date" type="datetime-local">
+            </div>
+          </div>
+        <div class="form-group">
+            <label for="gratitude_1"></label>
+            <input type="text" class="form-control" id="gratitude_1" name="gratitude_1" placeholder="First gratitude">
         </div>
-        <div class="input-field">
-            <label for="gratitude_1"> 1 : </label>
-            <input id="gratitude_1" name="gratitude_1" type="text" required>
+        <div class="form-group">
+            <label for="gratitude_2"></label>
+            <input type="text" class="form-control" id="gratitude_2" name="gratitude_2" placeholder="Second gratitude">
         </div>
-        <div class="input-field">
-            <label for="gratitude_2"> 2 : </label>
-            <input id="gratitude_2" name="gratitude_2" type="text" required>
+        <div class="form-group">
+            <label for="gratitude_3"></label>
+            <input type="text" class="form-control" id="gratitude_3" name="gratitude_3" placeholder="Third gratitude">
         </div>
-        <div class="input-field">
-            <label for="gratitude_3"> 3 : </label>
-            <input id="gratitude_3" name="gratitude_3" type="text" required>
-        </div>
-        <div>
-            <button type="submit">
-                Save
-            </button>
-        </div>
+        <button type="submit" class="btn btn-lg btn-primary mt-5">Save</button>
     </form>
 </section>
+
 {% endblock %}
