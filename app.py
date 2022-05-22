@@ -204,7 +204,7 @@ def edit_event(id):
     '''
     Create a new event by the user
     '''
-    event = mongo.db.events.find_one({"_id":ObjectId(id)})
+    event = mongo.db.events.find_one({"_id": ObjectId(id)})
     if session.get("user", "") != event["event_owner"]:  # only allow add if admin
         flash("Please log in before creating a new event")
         return redirect("get_events")
@@ -220,8 +220,9 @@ def edit_event(id):
 
         result = mongo.db.events.replace_one({"_id": ObjectId(id)}, event)
         flash(f"You have now edited event {event['event_name']}")
-        return redirect(url_for("profile", username=session.get("user","")))
+        return redirect(url_for("profile", username=session.get("user", "")))
     return render_template("event_edit_form.html", event=event)
+
 
 @app.route("/delete_event/<id>", methods=["GET", "POST"])
 @login_required
@@ -229,15 +230,15 @@ def delete_event(id):
     '''
     Create a new event by the user
     '''
-    event = mongo.db.events.find_one({"_id":ObjectId(id)})
+    event = mongo.db.events.find_one({"_id": ObjectId(id)})
     if session.get("user", "") != event["event_owner"]:  # only allow add if admin
         flash("Please log in before creating a new event")
         return redirect("get_events")
 
-
     result = mongo.db.events.delete_one({"_id": ObjectId(id)})
     flash(f"You have now deleted event {event['event_name']}")
-    return redirect(url_for("profile", username=session.get("user","")))
+    return redirect(url_for("profile", username=session.get("user", "")))
+
 
 @app.route("/attend_event/<event_id>")
 @login_required
@@ -258,7 +259,7 @@ def attend_event(event_id):
 
 
 @app.template_filter('format_date')
-def format_date(value, format="%d/%m/%y at %H:%M"):
+def format_date(value, format="%d %B %Y at %H:%M"):
     return value.strftime(format)
 
 
