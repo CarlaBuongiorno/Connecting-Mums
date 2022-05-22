@@ -31,7 +31,7 @@
         <!-- new display -->
         <div class="my-3 p-3 text-left">
             {% if session.user %}
-            {% for journal_entry in my_journal %} 
+            {% for journal_entry in my_journal %}
             <div class="media text-muted pt-3">
               <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
               <div class="media-body pb-3 mb-0 small lh-125 ">
@@ -60,12 +60,12 @@
               <hr>
             </div>
             {% else %}
-                <p class="text-muted mt-5">Your journal is empty! Start writing your gratitudes today with your journal.</p>
+                <p class="text-muted mt-5">Your journal is empty! Start writing your gratitudes.</p>
             {% endfor %}
             {% endif %}
-            <p class="d-block text-center mt-5">
+            <!-- <p class="d-block text-center mt-5">
                 <a href="#">All gratitudes</a>
-            </p>
+            </p> -->
         </div>
         </div>
     </div>

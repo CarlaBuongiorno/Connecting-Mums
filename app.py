@@ -244,10 +244,10 @@ def new_gratitude():
             "gratitude_3": request.form.get("gratitude_3"),
         }
 
-        journal = mongo.db.my_journal.insert_one(journal_entry).limit(3)
+        journal = mongo.db.my_journal.insert_one(journal_entry)
         _id = journal.inserted_id
         mongo.db.username.update_one(
-            {"username": session["user"]},{"$push": {"my_journal": _id}})
+            {"username": session["user"]}, {"$push": {"my_journal": _id}})
         flash("You added gratitudes to your journal today, well done!")
         return redirect("/profile/<username>")
     return render_template(
