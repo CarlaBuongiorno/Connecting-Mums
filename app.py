@@ -90,7 +90,7 @@ def register():
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
             "email": request.form.get("email"),
-            "attending_events": [],
+            "my_journal": [],
             "created_events": []
         }
         mongo.db.users.insert_one(register_user)
@@ -262,6 +262,38 @@ def format_date(value, format="%d/%m/%y at %H:%M"):
     return value.strftime(format)
 
 
+@app.route("/new_gratitude", methods=["GET", "POST"])
+@login_required
+def new_gratitude():
+    '''
+    Create a new gratitude in user journal / profile
+    '''
+    username = mongo.db.username.find_one(
+        {"username": session["user"].lower()})
+
+    if session.get("user", "") == "":  # only allow add if admin
+        flash("Please log in before creating a new gratitude to your journal")
+        return redirect("/login")
+
+    if request.method == 'POST':
+        # get gratitudes from journal
+        journal_entry = {
+            "gratitude_date": request.form.get("gratitude_date"),
+            "gratitude_1": request.form.get("gratitude_1"),
+            "gratitude_2": request.form.get("gratitude_2"),
+            "gratitude_3": request.form.get("gratitude_3"),
+        }
+
+        journal = mongo.db.my_journal.insert_one(journal_entry)
+        _id = journal.inserted_id
+        mongo.db.username.update_one(
+            {"username": session["user"]},{"$push": {"my_journal": _id}})
+        flash("You added gratitudes to your journal today, well done!")
+        return redirect("/profile/<username>")
+    return render_template(
+        "profile.html", username=username, journal_entry=journal_entry)
+
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 @login_required
 def profile(username):
@@ -273,8 +305,10 @@ def profile(username):
     username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
     events = mongo.db.events.find()
+    my_journal = mongo.db.my_journal.find()
 
-    return render_template("profile.html", username=username, events=list(events))
+    return render_template(
+        "profile.html", username=username, events=list(events), my_journal=my_journal)
 
 
 if __name__ == "__main__":

@@ -14,17 +14,31 @@
 </section>
 
 <!-- Journal -->
-<div class="py-2 text-center container bg-light" style="border-radius:5%;">
+<div class="py-2 text-center container bg-light mt-5">
     <div class="row mb-2">
-      <h2 class="fw-light mt-5">Daily Gratitude Journal</h2>
-      <p class="lead text-muted">Say thank you and celebrate.<br>
-        Acknowledging the good that you already have in your life is the foundation for all abundance.</p>
+      <h2 class="fw-light mt-5">My Gratitude Journal</h2>
+      <p class="lead text-muted">Acknowledging the good that you already have in your life is the foundation for all abundance.</p>
     </div>
     <div class="row mb-2">
       <div class="col-12 col-md-6 mt-5">
-        <img src="/static/assets/img/journal_img.png" class="bd-placeholder-img mt-5" alt="pink agenda" style="width:100%; height:auto; border-radius:2%;">
+
+        <!-- Display user saved_gratitudes -->
+        <h2> I am grateful for :</h2>
+        {% if session.user %}
+        {% for journal_entry in my_journal %} 
+            <p class="text-muted"> Date : {{ journal_entry.gratitude_date }}</p>
+            <p class="text-muted"> 1 : {{ journal_entry.gratitude_1 }}</p>
+            <p class="text-muted"> 2 : {{ journal_entry.gratitude_2 }}</p>
+            <p class="text-muted"> 3 : {{ journal_entry.gratitude_3 }}</p>
+            <hr>
+        {% else %}
+        <!-- New user journal -->    
+        <p class="text-muted">Your journal is empty! Start writing your gratitudes today</p>
+        {% endfor %}
+        {% endif %}
       </div>
       <div class="col-12 col-md-6">
+    <!-- Display user journal form -->
       {% if session.user %} 
         {% include 'journal_form.html' %}
       {% endif %}  

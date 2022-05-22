@@ -243,6 +243,8 @@ SECRET_KEY :
 
     * CodePen Home Random Quote Generator [View](https://codepen.io/robersonj/pen/xLOwLG)
     * Quote Generator [View](https://www.freecodecamp.org/news/creating-a-bare-bones-quote-generator-with-javascript-and-html-for-absolute-beginners-5264e1725f08/)
+    * JS quote generator [View](https://codepen.io/tag/js-quote-generator)
+    * YouTube Player API Reference for iframe Embeds [View](https://developers.google.com/youtube/iframe_api_reference)
 
 2. Page 2 : Events  
 
@@ -252,8 +254,7 @@ SECRET_KEY :
 4. Page 3 : Account
 
     * Journal [View](https://www.youtube.com/watch?v=wNZSeWkp6J0)
-    
-    creating-a-bare-bones-quote-generator-with-javascript-and-html-for-absolute-beginners-5264e1725f08/)
+    * Gith repo Growth diary [View](https://github.com/kulbinderdio/growthDiary/blob/master/templates/goals.html)
     * 5 minutes journal [View](https://www.intelligentchange.com/products/five-minute-journal-app)
 
 
