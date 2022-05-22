@@ -14,7 +14,7 @@
 </section>
 
 <!-- Journal -->
-<div class="py-2 text-center container bg-light" style="border-radius:5%;">
+<div class="py-2 text-center container bg-light">
     <div class="row mb-2">
       <h2 class="fw-light mt-5">Daily Gratitude Journal</h2>
       <p class="lead text-muted">Say thank you and celebrate.<br>
@@ -22,21 +22,23 @@
     </div>
     <div class="row mb-2">
       <div class="col-12 col-md-6 mt-5">
-        <!-- <img src="/static/assets/img/journal_img.png" class="bd-placeholder-img mt-5" alt="pink agenda" style="width:100%; height:auto; border-radius:2%;"> -->
-        
         {% for my_journal in my_journals %}
-        <!-- Find users saved_gratitudes -->
-            {% if username in my_journal.saved_gratitude %}
-                <p class="text-muted">{{ my_journal.gratitude_date|format_date }}</p>
-                <p class="text-muted">{{ my_journal.gratitude_1 }}</p>
-                <p class="text-muted">{{ my_journal.gratitude_2 }}</p>
-                <p class="text-muted">{{ my_journal.gratitude_3 }}</p>
+        <!-- Display user saved_gratitudes -->
+        <h2> I am grateful for :</h2>
+            {% if username in my_journal.new_gratitude %}
+                <p class="text-muted"> Date : {{ my_journal.gratitude_date|format_date }}</p>
+                <p class="text-muted"> 1 : {{ my_journal.gratitude_1 }}</p>
+                <p class="text-muted"> 2 :{{ my_journal.gratitude_2 }}</p>
+                <p class="text-muted"> 3 :{{ my_journal.gratitude_3 }}</p>
                 <hr>
+            {% else %}
+        <!-- New user journal -->    
+            <p class="text-muted">Your journal is empty! Start writing your gratitudes today</p>
             {% endif %}     
         {% endfor %}
-
       </div>
       <div class="col-12 col-md-6">
+    <!-- Display user journal form -->
       {% if session.user %} 
         {% include 'journal_form.html' %}
       {% endif %}  
