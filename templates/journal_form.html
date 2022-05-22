@@ -1,24 +1,23 @@
-{% extends "base.html" %}
 {% block content %}
 
-<h2>3 things I am grateful for today :</h2>
+<h4>3 things I am grateful for today :</h4>
 <section id="form">
     <form method="POST" action="{{url_for('new_gratitude')}}">
         <div class="input-field">
-            <input id="gratitude_date" name="gratitude_date" type="text" required>
             <label for="gratitude_date"> Date : </label>
+            <input id="gratitude_date" name="gratitude_date" type="datetime-local" required>
         </div>
         <div class="input-field">
-            <input id="gratitude_1" name="gratitude_1" type="text" required>
             <label for="gratitude_1"> 1 : </label>
+            <input id="gratitude_1" name="gratitude_1" type="text" required>
         </div>
         <div class="input-field">
-            <input id="gratitude_2" name="gratitude_2" type="text" required>
             <label for="gratitude_2"> 2 : </label>
+            <input id="gratitude_2" name="gratitude_2" type="text" required>
         </div>
         <div class="input-field">
-            <input id="gratitude_3" name="gratitude_3" type="text" required>
             <label for="gratitude_3"> 3 : </label>
+            <input id="gratitude_3" name="gratitude_3" type="text" required>
         </div>
         <div>
             <button type="submit">
