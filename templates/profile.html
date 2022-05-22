@@ -28,7 +28,6 @@
     </div>
     <div class="row mb-2">
         <div class="col-12">
-        <!-- new display -->
         <div class="my-3 p-3 text-left">
             {% if session.user %}
             {% for journal_entry in my_journal %}
@@ -42,19 +41,16 @@
               <div class="media-body pb-3 mb-0 small lh-125 ">
                 <div class="d-flex justify-content-between w-100">
                   <strong class="text-gray-dark"> 1 : {{ journal_entry.gratitude_1 }} </strong></br>
-                  <a href="#">Update</a>
                 </div>
               </div>
               <div class="media-body pb-3 mb-0 small lh-125">
                 <div class="d-flex justify-content-between w-100">
                   <strong class="text-gray-dark"> 2 : {{ journal_entry.gratitude_2 }}</strong></br>
-                  <a href="#">Update</a>
                 </div>
               </div>
               <div class="media-body pb-3 mb-0 small lh-125">
                 <div class="d-flex justify-content-between w-100 mb-2">
                   <strong class="text-gray-dark"> 3 : {{ journal_entry.gratitude_3 }}</strong></br>
-                  <a href="#">Update</a>
                 </div>
               </div>
               <hr>
@@ -63,9 +59,6 @@
                 <p class="text-muted mt-5">Your journal is empty! Start writing your gratitudes.</p>
             {% endfor %}
             {% endif %}
-            <!-- <p class="d-block text-center mt-5">
-                <a href="#">All gratitudes</a>
-            </p> -->
         </div>
         </div>
     </div>
