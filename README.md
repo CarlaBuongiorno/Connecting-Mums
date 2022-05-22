@@ -2,7 +2,7 @@
 
 [View the live project here](https://connecting-mums.herokuapp.com/)
 
-![Connecting-Mums](static/assets/img/)
+![Connecting-Mums](static/assets/img/amiresponsive.png)
 
 
 ## User Experience (UX)
