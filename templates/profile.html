@@ -62,7 +62,10 @@
                     <h3>Events Created:</h3>
                 </div>
                 <div class="col-6">
-                    <a class="btn btn-primary btn-md float-end" href="{{ url_for('new_event') }}">Create Event</a>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-md float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Create Event
+                    </button>
                 </div>
             </div>
             <hr>
@@ -80,4 +83,52 @@
     </div>
 </section>
 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create New Event</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form method="POST" action="{{url_for('new_event')}}">
+                <div class="input-field">
+                    <label for="event_name">Event Name</label>
+                    <input id="event_name" name="event_name" type="text" class="validate" pattern="^[a-ZA-Z0-9]$" minlength="5"
+                        required>
+                </div>
+                <div class="input-field">
+                    <label for="event_place">Event Location</label>
+                    <input id="event_place" name="event_place" type="text" required>
+                </div>
+                <div class="input-field">
+                    <label for="event_date">Date & Time</label>
+                    <input id="event_date" name="event_date" type="datetime-local" required>
+                </div>
+                <div class="input-field">
+                    <label for="event_description">Description</label>
+                    <input id="event_description" name="event_description" type="text" required>
+                </div>
+                
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Create</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    var myModal = document.getElementById('myModal')
+    var myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', function () {
+        myInput.focus()
+    })
+</script>
 {% endblock %}
