@@ -13,9 +13,24 @@
     </div>
 </section>
 
-
-
-
+<!-- Journal -->
+<div class="py-2 text-center container bg-light" style="border-radius:5%;">
+    <div class="row mb-2">
+      <h2 class="fw-light mt-5">Daily Gratitude Journal</h2>
+      <p class="lead text-muted">Say thank you and celebrate.<br>
+        Acknowledging the good that you already have in your life is the foundation for all abundance.</p>
+    </div>
+    <div class="row mb-2">
+      <div class="col-12 col-md-6 mt-5">
+        <img src="/static/assets/img/journal_img.png" class="bd-placeholder-img mt-5" alt="pink agenda" style="width:100%; height:auto; border-radius:2%;">
+      </div>
+      <div class="col-12 col-md-6">
+      {% if session.user %} 
+        {% include 'journal_form.html' %}
+      {% endif %}  
+      </div>
+    </div>
+</div>
 
 
 <section>
