@@ -3977,7 +3977,7 @@ textarea.form-control-lg {
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
+  color: #FA8072;
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
@@ -11291,9 +11291,9 @@ textarea.form-control-lg {
   font-size: 2rem;
 }
 
-/* Personalized CSS*/
+/* CUSTOMIZED CSS */
 
-/* HEADER */
+/* Header -------------------------------------------------------- */
 
 header.masthead {
   position: relative;
@@ -11326,20 +11326,8 @@ header.masthead h1, header.masthead .h1 {
   }
 }
 
-.showcase .showcase-text {
-  padding: 3rem;
-}
-.showcase .showcase-img {
-  min-height: 30rem;
-  background-size: cover;
-}
-@media (min-width: 768px) {
-  .showcase .showcase-text {
-    padding: 7rem;
-  }
-}
 
-/* BUTTON */
+/* Button -------------------------------------------------------- */
 
 .btn-primary, 
         .btn-primary:hover {
