@@ -19,6 +19,7 @@
         <div class="col-12">
             <h2 class="fw-light mt-5">My Journal</h2>
             <p class="lead text-muted mb-5">Every day start your day with 3 gratitudes. Get specific! Acknowledging the good that you already have in your life is the foundation for all abundance.</p>
+            <h5 class="mb-5">I am grateful for :</h5>
             <!-- Display user journal form -->
             {% if session.user %} 
             {% include 'journal_form.html' %}
@@ -29,7 +30,6 @@
         <div class="col-12">
         <!-- new display -->
         <div class="my-3 p-3 text-left">
-            <h4 class="text-right border-bottom border-gray pb-2 mb-0 mt-5"></h4>
             {% if session.user %}
             {% for journal_entry in my_journal %} 
             <div class="media text-muted pt-3">

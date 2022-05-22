@@ -244,7 +244,7 @@ def new_gratitude():
             "gratitude_3": request.form.get("gratitude_3"),
         }
 
-        journal = mongo.db.my_journal.insert_one(journal_entry)
+        journal = mongo.db.my_journal.insert_one(journal_entry).limit(3)
         _id = journal.inserted_id
         mongo.db.username.update_one(
             {"username": session["user"]},{"$push": {"my_journal": _id}})
