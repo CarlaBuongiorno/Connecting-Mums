@@ -1,6 +1,6 @@
 # Connecting-Mums 
 
-[View the live project here]()
+[View the live project here](https://connecting-mums.herokuapp.com/)
 
 ![Connecting-Mums](static/assets/img/)
 
@@ -50,25 +50,25 @@ c. Restraints
 
 ### User stories
 
-1. First Time Visitor Goals (forum / about)
+1. First Time Visitor Goals 
 
-* As a mother I want to read experiences about motherhood so that I can approach it in a knowledgeable way and be prepared to raise a child, cope with a sick kid or a loss.
+* As a mother I want to hear about experiences around motherhood so that I can approach it in a knowledgeable way and be prepared to raise a child, cope with a sick kid or a loss.
 * As a mother I want to be able to interact and give support to mothers in needs so that I can feel that I am helping out mothers goign through a difficult time
 * As a mother I want to share my own experience so that I have the feeling to contribute in a better future for our children
 * As a mother I want learn about good practices in terms of vitamins intakes, excersing, doctor visits etc. so that I can have greats tips on how to take of my mental health during this special time
 * As a mother I want to know about organizations / associations that I can reach out so that if I am in need of further helps I can reach to profesionnals.
 
-2. Returning Visitors Goals (events)
+2. Returning Visitors Goals
 
 * As a mother I want to meet other mothers from the comfort of my home so that I can still connect, have a social life and learn from other mothers remotely.
 * As a mother I want to meet other mothers in real life close to my home / in my neighborhood so that my children can have playdates and I can interact in real life
 * As a mother I want to organize events about motherhood so that I can meet and inspire other mothers to take care of their mental health.
 
 
-3. Frequent User Goals (journaling / newsletter / quotes)
+3. Frequent User Goals
 
 * As a mother I want to have a personal space in which I can daily write my ups and downs so that it helps me be more grateful and cope with difficult times that brings motherhood.
-* As a mother I want to be aware of trending topics around motherhood so that I better myself and my community
+* As a mother I want to be aware of trending topics around motherhood so that I can better help myself and my community
 * As a mother I want to be inspired by daily quotes so that it reassures me in my role of mother
 
 ### Design
@@ -79,15 +79,16 @@ The color scheme chosen  ?  tones as these colors reflects
 
 The main colour used for this project are as follow : 
 
-* `#color 1`: 
+* `#BC2065`: dark purple pink as main color to recall feminity and communication
 
-* `#color2`: 
+* `#FA8072`: light pink/orange for links to bring dynamism.
 
-* `#color3`: 
+* `dark` / `grey` / `white`:  These background/structure colors were chosen to bring profesionalism/serious to the site as it is about mental health and motherhood which are sensitive topics.
 
 
 2. Typography
-The ` ?` font is the main font used throughout the whole website with `sans-serif` as fallback fonts in a case for any reason, the font isn't being imported into the site correctly. 
+
+The ` Micropolis ` font is the main font used throughout the whole website with `sans-serif` as fallback fonts in a case for any reason, the font isn't being imported into the site correctly. The rounded and dynamic font was chosen to reflect feminity and a dynamic connection aspect to the site.
 
 
 3. Imagery / Video
@@ -99,44 +100,39 @@ Imagery is important in this website to illustrate the importance of the connect
 
 ### Branding research 
 
-[Smashinglogo maker]() program was used to generate branding ideas and color scheme. Below see some materials :
+[Smashinglogo maker](https://smashinglogo.com/fr/preview?s=ogdps3per-i2vy1iu1m) program was used to generate branding ideas and color scheme.
 
-* Logo
-    - 
-    - 
+* Material
+    - ![Connecting-Mums Logo](static/assets/img/logo.png)
+    - ![Connecting-Mums Branding](static/assets/img/branding-colors.png)
+    - ![Connecting-Mums Goodies](static/assets/img/connecting-mums_goodies.png)
 
 
 * Covers / Hero image 
-    - 
-    - 
 
+Through the imagery, the idea is to show connecting mums on several level. On the hero image in the home page it shows the main connection which is between mother and child.
+The rest of the image reinforces the idea of connection with other mothers in a virtual or real way.
 
 
 ### Wireframes
 
-1. All Wireframes - [View](static/assets/wireframes/all_wireframes.pdf)
-2. Mobile Wireframes - [View](static/assets/wireframes/mobile_wireframes.pdf)
-3. Tablet Wireframes - [View](static/assets/wireframes/tablet_wireframes.pdf)
-4. Desktop Wireframes - [View](static/assets/wireframes/desktop_wireframes.pdf)
-
-### Database CRUD (Create, Read, Update, Delete)
-
-#### Mindmap with Lucidchart
-1. Database Structure 
-2. Mindmap programs 
+* Wireframes - [View](static/wireframes/)
 
 
-#### Database 
-1. Users
-2. Events (Meetups)
-3. Posts (Forum)
-4. Logs (Journaling)
+### Database MongoDB
+
+* Connecting mums database ![View](static/assets/img/connecting-mums_db.png)
+- events
+- my_journal (gratitudes)
+- users
+
+* Example of an event document ![View](static/assets/img/events_db.png)
 
 
 ## General Features
 
-* The website is called 
-* The website is structured in X pages : `Forum`, `Events`, `About`, `Account`
+* The website is called `Connecting Mums`
+* The website is structured in 3 main pages : `Home`, `Events`, `My Account`
 * The website's pages and different features are responsive on all device sizes. 
 * Each page features a responsive header with a navigation bar and a convenient placement of the logo (top left).
 * Users can find a sign-up option.
@@ -144,56 +140,35 @@ Imagery is important in this website to illustrate the importance of the connect
 * There is a footer with copyright information and social media links. 
 * The general features of the site are in one space base_template.
 
-#### Forum
 
-* 
-* 
-* 
+### Existing features 
+
+#### Home
+
+* How it works / Purpose
+* Quote Generator + Share to twitter
+* The Mummy Cheat Codes / Tips 
 
 
 #### Events
 
 * Search events
 * Join events
+
+#### My Account
+
+* Gratitude journal
 * Create, edit, delete events
-
-#### About
-* 
-* 
-* 
-
-#### Account
-
-* Profile details
-* Journaling record
+* Register
 * Log in / Log out
-* Sign in /Sign out
-
-#### General
-
-* 
-* 
-* 
-
-
-### Existing features 
-
-1. On every page
-
-
-2. Summary page features specificities:
-* `page 1`: Allows users to
-* `page 2`: Allows users to 
-* `page 3`: Allows users to 
-* `page 4`: Allows users to 
-* `page 5` : Allows users to 
 
 
 ### Features to implement in the future
 
-- 
-- 
-- 
+- Play button to listening relaxing music while completing the gratitude journal
+- Send confirmation e-mail when user confirm participation with link to event
+- Add image to an event when creating an event
+
 
 ## Technologies Used 
 
@@ -226,17 +201,11 @@ Flask was used as a library to facilitate running all python functons
 6. [MongoDB](https://www.mongodb.com/)
 MongoDB was used to build databases / collections
 
-7. [Google Fonts](https://fonts.google.com/)
-Google fonts were used to import the  font into the style.css file which is used on all pages throughout the project.
-
-8. [Font Awesome](https://fontawesome.com/)
+7. [Font Awesome](https://fontawesome.com/)
 Font Awesome was used on all pages throughout the website to add icons for aesthetic purposes.
 
-9. [StartBootstrap](https://startbootstrap.com/theme/landing-page)
+8. [StartBootstrap](https://startbootstrap.com/theme/landing-page)
 StartBootstrap was used to get a landing page template to build the app
-
-10. [Lucidchart](https://lucid.app/)
-Luci app was used to mindmap and have an overview of the database strategies and structure
 
 
 ## Testing 
@@ -270,56 +239,38 @@ SECRET_KEY :
 
 ### Code
 
-1. Page 1 : Forum
+1. Page 1 : Home
 
-* 
-* 
-* 
+    * CodePen Home Random Quote Generator [View](https://codepen.io/robersonj/pen/xLOwLG)
+    * Quote Generator [View](https://www.freecodecamp.org/news/creating-a-bare-bones-quote-generator-with-javascript-and-html-for-absolute-beginners-5264e1725f08/)
 
 2. Page 2 : Events  
 
-* 
-* 
-* 
+    * Love running Code Institute walkthrough project
+    * Code Institute Flask Thorin Project
 
-3. Page 3 : About
+4. Page 3 : Account
 
-* 
-* 
-* 
-
-4. Page 4 : Account
-
-* 
-* 
-* 
-
-5. General
-
-* Code Institute Love running
-* Code Institute Flask Thorin Project
-* Quote Generator [Here](https://www.freecodecamp.org/news/creating-a-bare-bones-quote-generator-with-javascript-and-html-for-absolute-beginners-5264e1725f08/)
-* 5 minutes journal [Here](https://www.intelligentchange.com/products/five-minute-journal-app)
+    * Journal [View](https://www.youtube.com/watch?v=wNZSeWkp6J0)
+    
+    creating-a-bare-bones-quote-generator-with-javascript-and-html-for-absolute-beginners-5264e1725f08/)
+    * 5 minutes journal [View](https://www.intelligentchange.com/products/five-minute-journal-app)
 
 
 ### Content 
 
-* All content was written by the developers
+* All content was written by the developers (see collaborators section below)
 * Color scheme was found on the website Colormind, you can view it [Here](http://colormind.io/)
 * Psychological properties of colors were found [Here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
 * Psychological properties of fonts were found [Here](https://designmodo.com/font-psychology/)
 
 * Readme.md inspiration models : 
-Readme.md sample from Code Institute [View](https://github.com/Code-Institute-Solutions/SampleREADME)
-Readme.md sample from Anna Greaves's portrait artist [View](https://github.com/AJGreaves/portrait-artist/blob/master/README.md)
+    - Readme.md sample from Code Institute [View](https://github.com/Code-Institute-Solutions/SampleREADME)
+    - Readme.md sample from Anna Greaves's portrait artist [View](https://github.com/AJGreaves/portrait-artist/blob/master/README.md)
 
 * Websites benchmark :
-
-The site was inspired by : 
-- [Meetup](https://www.meetup.com/)
-- [5 minutes journal](https://www.intelligentchange.com/products/five-minute-journal-app)
-- 
-- 
+    - [Meetup](https://www.meetup.com/)
+    - [5 minutes journal](https://www.intelligentchange.com/products/five-minute-journal-app)
 
 
 ### Media
@@ -329,15 +280,21 @@ The site was inspired by :
 
 ### FAQ
 
-1. 
-2. 
-3.  
+1. How do users participate to an event on Connecting Mums ?
+
+Users needs to have an account in order to participate to an event on Connecting Mums. Once eregistered they can create an event to help bring awareness and support mothers around the world.
+
+
+2. I have great ideas, can I contribute in developing and scaling Connecting Mums ?
+
+We will be happy to welcome you onboard to develop the cause. Please contact one the collaborators of this project mentionned below for more information.
+
 
 ### About 
 
-Hackathon : Getting Connected (May 2022) organized by Code Institute and 
+Participation to Hackathon : Getting Connected (May 2022) organized by Code Institute and Trust in Soda
 
-- Highlight the importance of staying connected
+- Highlight the importance of staying connected 
 - Bring awareness about Mental Health
 
 ### Acknowledgements
@@ -345,12 +302,13 @@ Hackathon : Getting Connected (May 2022) organized by Code Institute and
 Many thanks to : 
 
 - Code Institute and Trust in Soda for organizing this Hackathon : Getting Connected (May 2022)
+- Each collaborator of this project for this great coding adventure, celebrating mothers.
 - Peer-to-peer support from the Code Institute Slack community.
 
 ## Collaborators 
 
 - Carla Buongiorno [view Github](https://github.com/CarlaBuongiorno)
-- Eva [view Github](https://github.com/EonTAS)
+- Martin Oglesby [view Github](https://github.com/EonTAS)
 - Florence Mezino [view Github](https://github.com/florencemezino)
 - Sorin Andrei [view Github](https://github.com/Sorin05)
 
