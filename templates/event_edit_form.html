@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Edit Event Form</h2>
+<section id="form">
+    <form method="POST" action="{{url_for('edit_event', id=event._id)}}">
+        <div class="input-field">
+            <input id="event_name" name="event_name" type="text" class="validate" pattern="^[a-ZA-Z0-9]$" minlength="5" value="{{event.event_name}}"
+                required>
+            <label for="event_name">Name of Event</label>
+        </div>
+        <div class="input-field">
+            <input id="event_place" name="event_place" type="text" value="{{event.event_place}}" required>
+            <label for="event_place">Event Location</label>
+        </div>
+        <div class="input-field">
+            <input id="event_date" name="event_date" type="datetime-local" value="{{event.event_date|format_date('%Y-%m-%dT%H:%M')}}" required>
+            <label for="event_date">Date & Time</label>
+        </div>
+        <div class="input-field">
+            <input id="event_description" name="event_description" type="text" value="{{event.event_description}}" required>
+            <label for="event_description">Description</label>
+        </div>
+        <div>
+            <button type="submit">
+                Update Event
+            </button>
+        </div>
+    </form>
+</section>
+{% endblock %}

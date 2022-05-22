@@ -4,10 +4,11 @@
 <h2>New Event Form</h2>
 <section id="form">
     <form method="POST" action="{{url_for('new_event')}}">
+    
         <div class="input-field">
-            <input id="event_name" name="event_name" type="text" class="validate" pattern="^[a-ZA-Z0-9]$" minlength="5"
+            <input id="event_name" name="event_name" type="text" class="validate" pattern="^[a-ZA-Z0-9]$" minlength="5" placeholder="Event Name"
                 required>
-            <label for="event_name">Name of Event</label>
+            
         </div>
         <div class="input-field">
             <input id="event_place" name="event_place" type="text" required>
@@ -17,9 +18,9 @@
             <input id="event_date" name="event_date" type="datetime-local" required>
             <label for="event_date">Date & Time</label>
         </div>
-        <div class="input-field">
-            <input id="event_description" name="event_description" type="text" required>
-            <label for="event_description">Description</label>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
         <div>
             <button type="submit">
