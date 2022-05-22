@@ -222,6 +222,31 @@ def formate_date(value, format="%d/%m/%y at %H:%M"):
     return value.strftime(format)
 
 
+@app.route("/new_gratitude", methods=["GET", "POST"])
+@login_required
+def new_gratitude():
+    '''
+    Create a new gratitude in user journal / profile
+    '''
+    if session.get("user", "") == "":  # only allow add if admin
+        flash("Please log in before creating a new gratitude to your journal")
+        return redirect("/login")
+
+    if request.method == 'POST':
+        # get gratitude from journal
+        my_journal = request.form.to_dict()
+        my_journal["gratitude_date"] = dateutil.parser.parse(
+            my_journal["gratitude_date"])
+        my_journal["gratitude_1"] = []
+        my_journal["gratitude_2"] = []
+        my_journal["gratitude_3"] = []
+
+        mongo.db.events.insert_one(my_journal)
+        flash("You added gratitudes to your journal today, well done!")
+        return redirect("/profile(username)")
+    return render_template("profile.html")
+
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 @login_required
 def profile(username):

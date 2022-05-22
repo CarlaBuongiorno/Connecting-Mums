@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section>
+<h2> I am grateful for :</h2>
+    <p class="text-muted"> Date : {{ my_journal.gratitude_date|format_date }}</p>
+    <p class="text-muted"> 1 : {{ my_journal.gratitude_1 }}</p>
+    <p class="text-muted"> 2 : {{ my_journal.gratitude_2 }}</p>
+    <p class="text-muted"> 3 : {{ my_journal.gratitude_3 }}</p>
+    <hr>
+</section>
+
+{% endblock %}

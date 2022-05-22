@@ -22,7 +22,19 @@
     </div>
     <div class="row mb-2">
       <div class="col-12 col-md-6 mt-5">
-        <img src="/static/assets/img/journal_img.png" class="bd-placeholder-img mt-5" alt="pink agenda" style="width:100%; height:auto; border-radius:2%;">
+        <!-- <img src="/static/assets/img/journal_img.png" class="bd-placeholder-img mt-5" alt="pink agenda" style="width:100%; height:auto; border-radius:2%;"> -->
+        
+        {% for my_journal in my_journals %}
+        <!-- Find users saved_gratitudes -->
+            {% if username in my_journal.saved_gratitude %}
+                <p class="text-muted">{{ my_journal.gratitude_date|format_date }}</p>
+                <p class="text-muted">{{ my_journal.gratitude_1 }}</p>
+                <p class="text-muted">{{ my_journal.gratitude_2 }}</p>
+                <p class="text-muted">{{ my_journal.gratitude_3 }}</p>
+                <hr>
+            {% endif %}     
+        {% endfor %}
+
       </div>
       <div class="col-12 col-md-6">
       {% if session.user %} 
