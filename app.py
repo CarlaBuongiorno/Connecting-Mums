@@ -285,6 +285,7 @@ def new_gratitude():
             "gratitude_1": request.form.get("gratitude_1"),
             "gratitude_2": request.form.get("gratitude_2"),
             "gratitude_3": request.form.get("gratitude_3"),
+            "journalist": session.get("user", "")
         }
 
         journal = mongo.db.my_journal.insert_one(journal_entry)
