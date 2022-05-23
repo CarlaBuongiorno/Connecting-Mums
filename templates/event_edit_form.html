@@ -1,23 +1,75 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Edit Event Form</h2>
-<section id="form">
-    <form method="POST" action="{{url_for('edit_event', id=event._id )}}">
-        <div class="input-field">
-            <input id="event_name" name="event_name" type="text" class="validate" pattern="^[a-ZA-Z0-9]$" minlength="5"
-                placeholder="Event Name" required>
+<h2 class="text-center mt-5 mb-4">Edit Event</h2>
+
+    <section class="container mb-5" id="form">
+        <div class="row">
+            <form method="POST" class="card col-12 col-md-8 offset-md-2" action="{{ url_for('edit_event', id=event._id) }}">
+                <div class="card-body">
+                    <div class="row g-2">
+
+                        <!-- Event Name Icon -->
+                        <div class="col-md-1 align-self-center">
+                            <i class="fas fa-ice-cream col-md"></i>
+                        </div>
+                        <!-- Event Name -->
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input id="event_name" name="event_name" class="form-control" type="text" class="validate"
+                                    pattern="^[a-ZA-Z0-9]$" minlength="5" maxlength="15" placeholder="Event Name" required>
+                                <label for="event_name">Event Name</label>
+                            </div>
+                        </div>
+
+                        <!-- Location Icon -->
+                        <div class="col-md-1 align-self-center">
+                            <i class="fas fa-map-marker-alt col-md"></i>
+                        </div>
+                        <!-- Location -->
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input id="event_place" name="event_place" class="form-control" type="text" class="validate"
+                                    pattern="^[a-ZA-Z0-9]$" minlength="5" maxlength="15" placeholder="Event Location"
+                                    required>
+                                <label for="event_place">Location</label>
+                            </div>
+                        </div>
+
+                        <!-- Description Icon -->
+                        <div class="col-md-1 align-self-center">
+                            <i class="far fa-comments col-md"></i>
+                        </div>
+                        <!-- Description -->
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input id="event_description" name="event_description" class="form-control" type="text"
+                                    class="validate" pattern="^[a-ZA-Z0-9]$" minlength="5" maxlength="15"
+                                    placeholder="Description" required>
+                                <label for="event_description">Description</label>
+                            </div>
+                        </div>
+
+                        <!-- Date & Time Icon -->
+                        <div class="col-md-1 align-self-center">
+                            <i class="fas fa-calendar-check col-md"></i>
+                        </div>
+                        <!-- Date & Time -->
+                        <div class="col-md-10 offset-md-1 col-lg-11 offset-lg-0">
+                            <div class="form-floating mb-3">
+                                <input id="event_date" name="event_date" class="form-control" type="datetime-local"
+                                    required>
+                                <label for="event_date">Date & Time</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center mt-4 mb-3 mx-0">
+                        <div class="d-grid col-lg-4 text-center">
+                            <button type="submit" class="btn btn-primary btn-lg px-4">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="input-field">
-            <input id="event_place" name="event_place" type="text" placeholder="Location" required>
-        </div>
-        <div class="input-field date-time">
-            <input id="event_date" name="event_date" type="datetime-local" required>
-        </div>
-        <div class="input-field">
-            <input id="event_description" name="event_description" type="text" placeholder="Description" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Edit</button>
-    </form>
-</section>
+    </section>
 {% endblock %}
