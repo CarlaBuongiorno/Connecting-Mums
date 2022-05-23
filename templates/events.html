@@ -39,6 +39,7 @@
                             <p class="text-muted">{% if event.members_attending|length == 1 %}1 person {% else %}{{event.members_attending|length }}
                             people{% endif %} attended this event!</p>
                         </div>
+                        
                         {% if session.user in event.members_attending %}
                             <div class="btn btn-primary btn-lg px-4 me-sm-3">You were here</div>
                         {% endif %}
