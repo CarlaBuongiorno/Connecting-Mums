@@ -272,7 +272,7 @@ def new_gratitude():
     Create a new gratitude in user journal / profile
     '''
     username = mongo.db.username.find_one(
-        {"username": session["user"].lower("saved_gratitude")})
+        {"username": session["user"].lower()})
 
     if session.get("user", "") == "":  # only allow add if admin
         flash("Please log in before creating a new gratitude to your journal")
