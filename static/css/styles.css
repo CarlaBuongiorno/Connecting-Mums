@@ -11458,7 +11458,7 @@ footer {
 
 .my-custom-scrollbar {
   position: relative;
-  width: 800px;
+  width: 1100px;
   height: 400px;
   overflow: auto;
 }
