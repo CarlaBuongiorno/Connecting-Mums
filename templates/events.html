@@ -36,17 +36,17 @@
                     {% if now > event.event_date %}
                         <div>
                             This event has happened!<br>
-                            {% if event.members_attending|length == 1 %}1 person {% else %}{{event.members_attending|length }}
-                            people{% endif %} attended this event!
+                            <p class="text-muted">{% if event.members_attending|length == 1 %}1 person {% else %}{{event.members_attending|length }}
+                            people{% endif %} attended this event!</p>
                         </div>
                         {% if session.user in event.members_attending %}
                             <div class="btn btn-primary btn-lg px-4 me-sm-3">You were here</div>
                         {% endif %}
                     {% else %}
                     <div>
-                        {% if event.members_attending|length == 1 %}1 person is{% else %}{{ event.members_attending|length }}
+                        <p class="text-muted">{% if event.members_attending|length == 1 %}1 person is{% else %}{{ event.members_attending|length }}
                         people
-                        are{% endif %} attending this event!
+                        are{% endif %} attending this event!</p>
                     </div>
                         {%if not session.user %}
                             <a class="btn btn-primary btn-md px-4 me-sm-3 mt-2" href="{{ url_for('login') }}">Participate</a>
@@ -54,7 +54,7 @@
                             <a class="btn btn-primary btn-lg px-4 me-sm-3"
                                 href="{{ url_for('attend_event', event_id=event._id) }}">I want to attend this event</a>
                         {% else %}
-                            <div>Already attending event</div>
+                            <div>You are attending this event</div><a href="{{ url_for('profile', username=session['user']) }}">See in my Profile</a>
                         {% endif %}
                     {% endif %}
                 </div>

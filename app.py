@@ -257,6 +257,8 @@ def attend_event(event_id):
         {"$addToSet":
             {"members_attending": session.get("user", "")}}
         )
+    event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
+    flash(f"You will be attending {event['event_name']} on {event['event_date']}")
     return redirect("/get_events")
 
 
