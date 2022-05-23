@@ -11451,3 +11451,14 @@ footer {
       font-size: 25px;
   }
 }
+
+/* My Account --------------------------------------------------------   */
+
+/* Scroll bar for journal */
+
+.my-custom-scrollbar {
+  position: relative;
+  width: 1100px;
+  height: 400px;
+  overflow: auto;
+}

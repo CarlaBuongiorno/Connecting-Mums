@@ -264,7 +264,7 @@ SECRET_KEY :
 
     * Journal [View](https://www.youtube.com/watch?v=wNZSeWkp6J0)
     * Gith repo Growth diary [View](https://github.com/kulbinderdio/growthDiary/blob/master/templates/goals.html)
-    * 5 minutes journal [View](https://www.intelligentchange.com/products/five-minute-journal-app)
+    * Scrollbar and SmoothScroll [View](https://mdbootstrap.com/docs/b4/jquery/javascript/scroll/#test2)
 
 
 ### Content 
