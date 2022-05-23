@@ -1,3 +1,10 @@
+html, body { height: 100%;}
+
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
+
 @charset "UTF-8";
 :root {
   --bs-blue: #0d6efd;
