@@ -196,7 +196,7 @@ def new_event():
         mongo.db.events.insert_one(event)
         flash(f"You have now created new event {event['event_name']}")
         return redirect("/get_events")
-    return render_template("events_form.html")
+    return render_template("new_event_form.html")
 
 
 @app.route("/edit_event/<id>", methods=["GET", "POST"])
@@ -219,10 +219,10 @@ def edit_event(id):
         event["test_event"] = True
         event["event_date"] = dateutil.parser.parse(event["event_date"])
 
-        result = mongo.db.events.replace_one({"_id": ObjectId(id)}, event)
+        mongo.db.events.replace_one({"_id": ObjectId(id)}, event)
         flash(f"You have now edited event {event['event_name']}")
         return redirect(url_for("profile", username=session.get("user", "")))
-    return render_template("event_edit_form.html", event=event, result=result)
+    return render_template("event_edit_form.html", event=event)
 
 
 @app.route("/delete_event/<id>", methods=["GET", "POST"])

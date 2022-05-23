@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Edit Event Form</h2>
+<h2>Create Event</h2>
 <section id="form">
-    <form method="POST" action="{{url_for('edit_event', id=event._id )}}">
+    <form method="POST" action="{{url_for('new_event')}}">
         <div class="input-field">
             <input id="event_name" name="event_name" type="text" class="validate" pattern="^[a-ZA-Z0-9]$" minlength="5"
                 placeholder="Event Name" required>
@@ -17,7 +17,7 @@
         <div class="input-field">
             <input id="event_description" name="event_description" type="text" placeholder="Description" required>
         </div>
-        <button type="submit" class="btn btn-primary">Edit</button>
+        <button type="submit" class="btn btn-primary">Create</button>
     </form>
 </section>
 {% endblock %}
