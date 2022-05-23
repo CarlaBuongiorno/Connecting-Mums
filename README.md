@@ -305,7 +305,7 @@ We will be happy to welcome you onboard to develop the cause. Please contact one
 Participation to Hackathon : Getting Connected (May 2022) organized by Code Institute and Trust in Soda
 
 - Highlight the importance of staying connected 
-- Bring awareness about Mental Health
+- Bring awareness about Mental Health as May is mental health month.
 
 ### Acknowledgements
 

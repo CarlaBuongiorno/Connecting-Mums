@@ -11344,7 +11344,7 @@ header.masthead h1, header.masthead .h1 {
 
       
  
-/* Navbar*/
+/* Navbar -------------------------------------------------------- */
         
 .arrow-nav-link {
   color: #fa8072;
@@ -11356,7 +11356,7 @@ header.masthead h1, header.masthead .h1 {
 
 }
 
-/* Footer */
+/* Footer -------------------------------------------------------- */
 
 footer {
   padding-top: 4rem;
@@ -11393,7 +11393,7 @@ footer {
   justify-content: space-evenly;
 }
 
-/* Quote */
+/* Quote --------------------------------------------------------   */
 
 .txt-container {
 	margin: 0px auto;
