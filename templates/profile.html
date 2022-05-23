@@ -18,50 +18,53 @@
     <div class="row mb-2">
         <div class="col-12">
             <h2 class="fw-light mt-5">My Journal</h2>
-            <p class="lead text-muted mb-5">Every day start your day with at least 3 gratitudes. Get specific! Acknowledging the good that you already have in your life is the foundation for all abundance.</p>
+            <p class="lead text-muted mb-5">Every day start your day with at least 3 gratitudes. Get specific!
+                Acknowledging the good that you already have in your life is the foundation for all abundance.</p>
             <h5 class="mb-5">I am grateful for :</h5>
             <!-- Display user journal form -->
-            {% if session.user %} 
-            {% include 'journal_form.html' %}
-            {% endif %} 
+            {% if session.user %}
+                {% include 'journal_form.html' %}
+            {% endif %}
         </div>
     </div>
     <div class="row">
-        <div class="col-12 ">
-        <div class="my-3 p-3 my-custom-scrollbar">
-            {% for journal_entry in my_journal %}
-            <div class="media text-muted pt-3 ">
-              <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
-              <div class="media-body pb-3 small mb-0 lh-125 ">
-                <div class="d-flex justify-content-between w-100">
-                  <strong style="color:#fc8d1d;"> Date : {{ journal_entry.gratitude_date }} </strong></br>
-                </div>
-              </div>
-              <div class="media-body pb-3 mb-0 small lh-125 ">
-                <div class="d-flex justify-content-between w-100">
-                  <strong class="text-gray-dark"> 1 : {{ journal_entry.gratitude_1 }} </strong></br>
-                </div>
-              </div>
-              <div class="media-body pb-3 mb-0 small lh-125">
-                <div class="d-flex justify-content-between w-100">
-                  <strong class="text-gray-dark"> 2 : {{ journal_entry.gratitude_2 }}</strong></br>
-                </div>
-              </div>
-              <div class="media-body pb-3 mb-0 small lh-125">
-                <div class="d-flex justify-content-between w-100 mb-2">
-                  <strong class="text-gray-dark"> 3 : {{ journal_entry.gratitude_3 }}</strong></br>
-                </div>
-              </div>
-              <hr>
+        <div class="col-12">
+            <div class="my-3 p-3 my-custom-scrollbar">
+                {% for journal_entry in my_journal %}
+                    {% if username == journal_entry.journalist %}
+                        <div class="media text-muted pt-3">
+                            <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                            <div class="media-body pb-3 small mb-0 lh-125 ">
+                                <div class="d-flex justify-content-between w-100">
+                                    <strong style="color:#fc8d1d;"> Date : {{ journal_entry.gratitude_date }} </strong></br>
+                                </div>
+                            </div>
+                            <div class="media-body pb-3 mb-0 small lh-125 ">
+                                <div class="d-flex justify-content-between w-100">
+                                    <strong class="text-gray-dark"> 1 : {{ journal_entry.gratitude_1 }} </strong></br>
+                                </div>
+                            </div>
+                            <div class="media-body pb-3 mb-0 small lh-125">
+                                <div class="d-flex justify-content-between w-100">
+                                    <strong class="text-gray-dark"> 2 : {{ journal_entry.gratitude_2 }}</strong></br>
+                                </div>
+                            </div>
+                            <div class="media-body pb-3 mb-0 small lh-125">
+                                <div class="d-flex justify-content-between w-100 mb-2">
+                                    <strong class="text-gray-dark"> 3 : {{ journal_entry.gratitude_3 }}</strong></br>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                    {% endif %}
+                    {% else %}
+                    <p class="text-muted mt-5">Your journal is empty! Start writing your gratitudes.</p>
+                    {% endfor %}
             </div>
-            {% else %}
-                <p class="text-muted mt-5">Your journal is empty! Start writing your gratitudes.</p> 
-            {% endfor %}
-        </div>
+
         </div>
     </div>
 </div>
-
 
 <section>
     <div class="row mt-5">
@@ -76,14 +79,14 @@
             </div>
             <hr>
             {% for event in events %}
-            <!-- Find users saved events -->
+                <!-- Find users saved events -->
                 {% if username in event.members_attending %}
                     <p class="text-muted">{{event.event_date|format_date }}</p>
                     <h5>{{ event.event_name }}</h5>
                     <p class="text-muted">{{ event.event_description }}</p>
                     <p class="text-muted">{{ event.event_place }}</p>
                     <hr>
-                {% endif %}     
+                {% endif %}
             {% endfor %}
         </div>
         <div class="col-6 px-5">
@@ -92,10 +95,8 @@
                     <h3>Events Created:</h3>
                 </div>
                 <div class="col-6">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary btn-md float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Create Event
-                    </button>
+                    <!-- Create Event -->
+                    <a class="btn btn-primary btn-md float-end" href="{{url_for('new_event' )}}">Create Event</a>
                 </div>
             </div>
             <hr>
@@ -106,6 +107,7 @@
                     <h5>{{ event.event_name }}</h5>
                     <p class="text-muted">{{ event.event_description }}</p>
                     <p class="text-muted">{{ event.event_place }}</p>
+                    <!-- Edit Event -->
                     <a class="btn btn-secondary btn-md" href="{{url_for('edit_event',id=event._id)}}">Edit Event</a>
                     <a class="btn btn-danger btn-md" href="{{url_for('delete_event',id=event._id)}}">Delete Event</a>
                     <br>
@@ -116,47 +118,4 @@
     </div>
 </section>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create New Event</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form method="POST" action="{{url_for('new_event')}}">
-                    <div class="input-field">
-                        <input id="event_name" name="event_name" type="text" class="validate" pattern="^[a-ZA-Z0-9]$" minlength="5" placeholder="Event Name"
-                            required>
-                    </div>
-                    <div class="input-field">
-                        <input id="event_place" name="event_place" type="text" placeholder="Location" required > 
-                    </div>
-                    <div class="input-field date-time">
-                        <input id="event_date" name="event_date" type="datetime-local" required>
-                    </div>
-                    <div class="input-field">
-                        <input id="event_description" name="event_description" type="text" placeholder="Description" required>
-                    </div>
-                </div>
-            </form>
-        <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Create</button>
-        </div>
-    </div>
-    </div>
-</div>
-{% endblock %}
-
-{% block scripts %}
-<script>
-    var myModal = document.getElementById('myModal')
-    var myInput = document.getElementById('myInput')
-
-    myModal.addEventListener('shown.bs.modal', function () {
-        myInput.focus()
-    })
-</script>
 {% endblock %}
