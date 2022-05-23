@@ -26,11 +26,11 @@
                 <li class="nav-item"><a class="nav-link" aria-current="page" href="{{ url_for('home') }}">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('get_events') }}">Events</a></li>
                 {% if session.user %}
-                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('profile', username=session['user']) }}">My Account</a></li>
+                    <li class="nav-item"><a class="nav-link " href="{{ url_for('profile', username=session['user']) }}">My Account</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
                 {% else %}
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('register') }}">Register</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('login') }}">Log In</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Log In</a></li>
                 {% endif %}
             </ul>
         </div>
@@ -51,6 +51,15 @@
 
     {% block content %}
     {% endblock %}
+
+<!-- Scroll to top -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+            <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-solid fa-arrow-up"></i></button>
+        </div>
+    </div>
+</div>
 
 <!-- Footer-->
 <footer class="footer pt-5 pb-3 bg-dark">

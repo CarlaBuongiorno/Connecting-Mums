@@ -30,8 +30,8 @@
     <div class="row">
         <div class="col-12">
             <div class="my-3 p-3 my-custom-scrollbar">
-                {% for journal_entry in my_journal %}
-                    {% if username == journal_entry.journalist %}
+                    {% for journal_entry in my_journal %}
+                        {% if username == journal_entry.journalist %}
                         <div class="media text-muted pt-3">
                             <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
                             <div class="media-body pb-3 small mb-0 lh-125 ">
@@ -56,15 +56,12 @@
                             </div>
                             <hr>
                         </div>
-                    {% endif %}
-                    {% else %}
-                    <p class="text-muted mt-5">Your journal is empty! Start writing your gratitudes.</p>
+                        {% endif %}
                     {% endfor %}
+                </div>
             </div>
-
         </div>
     </div>
-</div>
 
 <section>
     <div class="row mt-5">
