@@ -23,43 +23,43 @@
             <h5 class="mb-5">I am grateful for :</h5>
             <!-- Display user journal form -->
             {% if session.user %}
-            {% include 'journal_form.html' %}
+                {% include 'journal_form.html' %}
             {% endif %}
         </div>
     </div>
     <div class="row">
         <div class="col-12">
             <div class="my-3 p-3 text-left">
-                {% if session.user %}
-                {% for journal_entry in my_journal %}
-                <div class="media text-muted pt-3">
-                    <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
-                    <div class="media-body pb-3 small mb-0 lh-125 ">
-                        <div class="d-flex justify-content-between w-100">
-                            <strong style="color:#fc8d1d;"> Date : {{ journal_entry.gratitude_date }} </strong></br>
+                    {% for journal_entry in my_journal %}
+                    {% if username == journal_entry.journalist %}
+                        <div class="media text-muted pt-3">
+                            <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                            <div class="media-body pb-3 small mb-0 lh-125 ">
+                                <div class="d-flex justify-content-between w-100">
+                                    <strong style="color:#fc8d1d;"> Date : {{ journal_entry.gratitude_date }} </strong></br>
+                                </div>
+                            </div>
+                            <div class="media-body pb-3 mb-0 small lh-125 ">
+                                <div class="d-flex justify-content-between w-100">
+                                    <strong class="text-gray-dark"> 1 : {{ journal_entry.gratitude_1 }} </strong></br>
+                                </div>
+                            </div>
+                            <div class="media-body pb-3 mb-0 small lh-125">
+                                <div class="d-flex justify-content-between w-100">
+                                    <strong class="text-gray-dark"> 2 : {{ journal_entry.gratitude_2 }}</strong></br>
+                                </div>
+                            </div>
+                            <div class="media-body pb-3 mb-0 small lh-125">
+                                <div class="d-flex justify-content-between w-100 mb-2">
+                                    <strong class="text-gray-dark"> 3 : {{ journal_entry.gratitude_3 }}</strong></br>
+                                </div>
+                            </div>
+                            <hr>
                         </div>
-                    </div>
-                    <div class="media-body pb-3 mb-0 small lh-125 ">
-                        <div class="d-flex justify-content-between w-100">
-                            <strong class="text-gray-dark"> 1 : {{ journal_entry.gratitude_1 }} </strong></br>
-                        </div>
-                    </div>
-                    <div class="media-body pb-3 mb-0 small lh-125">
-                        <div class="d-flex justify-content-between w-100">
-                            <strong class="text-gray-dark"> 2 : {{ journal_entry.gratitude_2 }}</strong></br>
-                        </div>
-                    </div>
-                    <div class="media-body pb-3 mb-0 small lh-125">
-                        <div class="d-flex justify-content-between w-100 mb-2">
-                            <strong class="text-gray-dark"> 3 : {{ journal_entry.gratitude_3 }}</strong></br>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                {% else %}
-                <p class="text-muted mt-5">Your journal is empty! Start writing your gratitudes.</p>
-                {% endfor %}
-                {% endif %}
+                    {% endif %}
+                    {% else %}
+                    <p class="text-muted mt-5">Your journal is empty! Start writing your gratitudes.</p>
+                    {% endfor %}
             </div>
         </div>
     </div>
