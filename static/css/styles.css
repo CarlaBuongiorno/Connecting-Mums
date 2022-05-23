@@ -3061,14 +3061,13 @@ textarea.form-control-lg {
 }
 .btn-secondary:hover {
   color: #fff;
-  background-color: #5c636a;
-  border-color: #565e64;
+  background-color: #f0bb2a;
+  border-color: #f0bb2a;
 }
 .btn-check:focus + .btn-secondary, .btn-secondary:focus {
   color: #fff;
   background-color: #5c636a;
   border-color: #565e64;
-  box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5);
 }
 .btn-check:checked + .btn-secondary, .btn-check:active + .btn-secondary, .btn-secondary:active, .btn-secondary.active, .show > .btn-secondary.dropdown-toggle {
   color: #fff;
@@ -3977,7 +3976,7 @@ textarea.form-control-lg {
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #FA8072;
+  color: #fff;
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
@@ -11329,6 +11328,7 @@ header.masthead h1, header.masthead .h1 {
 
 /* Button -------------------------------------------------------- */
 
+
 .btn-primary, 
         .btn-primary:hover {
             background-color: #BC2065;
@@ -11336,20 +11336,27 @@ header.masthead h1, header.masthead .h1 {
         }
         .btn-primary:active,
         .btn-primary:focus {
-            color: #BC2065;
-            background-color: #FDD7E7!important;
-            border-color: #FDD7E7 !important;
+            color: white;
+            background-color: #fa8072 !important;
+            border-color: #fa8072 !important;
             box-shadow: 0 0 0 0.2rem rgba(213,160,33, 0.5) !important;
         }
+
+      
  
-/* NAVBAR */
+/* Navbar -------------------------------------------------------- */
         
 .arrow-nav-link {
   color: #fa8072;
 
 }
 
-/* FOOTER */
+.arrow-nav-link:hover {
+  color: #bc2065;
+
+}
+
+/* Footer -------------------------------------------------------- */
 
 footer {
   padding-top: 4rem;
@@ -11386,7 +11393,7 @@ footer {
   justify-content: space-evenly;
 }
 
-/* Quote */
+/* Quote --------------------------------------------------------   */
 
 .txt-container {
 	margin: 0px auto;
@@ -11395,11 +11402,11 @@ footer {
 
 
 .txt-container button:hover{
-    background: #FA8072;
+    background: #f0bb2a;
 }
 
 .txt-container button:active{
-  background: #FA8072;
+  background: #f0bb2a;
 }
 
 .txt-container p {

@@ -63,10 +63,15 @@
         <h2 class="fw-bold lh-1 mb-3">Take care of yourself</h2>
         <p class="lead">According to mental health professionals, journaling is one of the most recommended tools to have a clearer mind and a happier life. Access to your personal journal in which you can daily reflect on your motherhood journey.</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <a class="text-decoration-none arrow-nav-link" href="#!">
-                My journal
+            {% if session.user %} 
+            <a class="text-decoration-none arrow-nav-link" href="{{ url_for('profile', username=session['user']) }}">My Account
                 <i class="bi bi-arrow-right"></i>
             </a>
+            {% else %} 
+            <a class="text-decoration-none arrow-nav-link" href="{{ url_for('login') }}">Login
+                <i class="bi bi-arrow-right"></i>
+            </a>
+            {% endif %} 
         </div>
       </div>
     </div>

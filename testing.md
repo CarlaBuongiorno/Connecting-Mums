@@ -7,18 +7,18 @@ View the live project [Here](https://connecting-mums.herokuapp.com/)
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
-- W3C Markup Validator  / Jinja - `Success` 
+- W3C Markup Validator  / Jinja - `TBD`
 (to validate Jinja code is to open up a webpage in your app, right click the page, click view source, and copy that code into the W3 HTML validator.)
 
 - W3C CSS Validator - `Success`
 
-- JShint - `Success`
+- JShint - `TBD`
 
-- Pep8 - `Success`
+- Pep8 - `TBD`
 
-- Gitpod report (0)
+- Gitpod report : `TBD`
 
-- Lighthouse : [view results](static/)
+- Lighthouse : ![view results](static/assets/img/lighthouse.png)
 
 
 ## Testing User Stories from the User Experience (UX) Section
@@ -31,64 +31,50 @@ Most common paths through the website:
 ### As a mother and a new visitor to the website :
 
 * As a mother I want to hear about experiences around motherhood so that I can approach it in a knowledgeable way and be prepared to raise a child, cope with a sick kid or a loss.
-    - 
-    - 
-    - 
+    - User can attend events to connect with any other user registered for the event to hear and share stories about their motherhood experience.
+    - User would need to have an account to attend to events online or in real life
+    - User can search events using a search bar with submit and reset button
 
-* As a mother I want to be able to interact and give support to mothers in needs so that I can feel that I am helping out mothers goign through a difficult time
-    - 
-    - 
-    - 
+
+* As a mother I want to be able to interact and give support to mothers in needs so that I can feel that I am helping out mothers going through a difficult time
+    - User can share inspirational quote related to motherwood to their tweeter community by a simple click.
+    - User can generate multiple quotes and share as much as they want
+ 
 
 * As a mother I want to share my own experience so that I have the feeling to contribute in a better future for our children
-    - 
-    - 
-    - 
+    - Registered user can create their own event on the platform for other mothers to attend
 
 * As a mother I want learn about good practices in terms of vitamins intakes, excersing, doctor visits etc. so that I can have greats tips on how to take of my mental health during this special time
-    - 
-    - 
-    - 
+    - User can have access to a Mummy cheat codes that includes plenty of tips about taking of hear
+    - User has an easy access to relaxing music video, that they can listen while completing their gratitude journal
 
 * As a mother I want to know about organizations / associations that I can reach out so that if I am in need of further helps I can reach to profesionnals.
-    - 
-    - 
-    - 
+    - In the footer section, user has access to a support helpline , available 24/7
+
 
 ### As a mother and returning visitor to the website :
 
 * As a mother I want to meet other mothers from the comfort of my home so that I can still connect, have a social life and learn from other mothers remotely.
-    - 
-    - 
-    - 
+    - User can register for online event. User can identify thanks to the description if it is a online or a on site event.
 
 * As a mother I want to meet other mothers in real life close to my home / in my neighborhood so that my children can have playdates and I can interact in real life
-    - 
-    - 
-    - 
+    - User can attend to real life event. The location is specified in the event description.
 
 * As a mother I want to organize events about motherhood so that I can meet and inspire other mothers to take care of their mental health.
-    - 
-    - 
-    - 
+    - Registered user can create their own event on the platform for other mothers to attend.
+    - User can see an overview of the events they created and attended in their profile section
 
 
 ### As a mother and frequent visitor to the website :
 
 * As a mother I want to have a personal space in which I can daily write my ups and downs so that it helps me be more grateful and cope with difficult times that brings motherhood.
-    - 
-    - 
-    - 
+    - Registered user has access to a gratitude journal in which they can 3 gratitude at a time and as many as they want 
 
 * As a mother I want to be aware of trending topics around motherhood so that I can better help myself and my community
-    - 
-    - 
-    - 
+    - User can check the latest event to see what is trending, by clicking the reset button from the search bar.
 
 * As a mother I want to be inspired by daily quotes so that it reassures me in my role of mother
-    - 
-    - 
-    - 
+    - User can the "inspire me" button to get different quote and make her reflect and get to a positive thinking.
 
 
 ## Manual (logical) testing of all elements and functionality on every page.
@@ -97,7 +83,7 @@ Most common paths through the website:
 
 1. Navbar
     - Click on the logo "Connecting Mums" / Check if it redirects to the welcome page
-    - Check each view for navigation links
+    - Check each link in navbar to verify if navigation links brings back to main page
 
 2. Footer
     - Check social medial links if it works
@@ -162,20 +148,19 @@ Most common paths through the website:
 3. Sections to verify
 - Go to "My Account" from a desktop
     * Gratitude Journal
-        - Check that saved gratitudes are rendering 
+        - Check that gratitudes are rendering 
         - Verify that the following information are present in the journal:
             - date
             - 3 gratitudes
 
     * Attended events
-        - 
-        - 
+        - Go to event page and click on "I want to attend"
+            - Verify that message in the event description is updated to : "already attending"
+            - Verify that attended event appears in user profile
 
-    * Created Events
-        - 
-        - 
-    
-    * Create a new event
+    * Create Events
+        - Got to profile page and click on create event
+        - Check if event appears in events page and in user profile
 
 > Repeat verification of functionality and responsiveness on mobile phone and tablet via Developer Tool
 
@@ -203,10 +188,9 @@ Most common paths through the website:
     - Footer code is identical on all html pages. Testing already completed.
 
 3. Log out 
-    - Go to "Login" from a desktop
-        - Log in through the form
-        - 
-        - 
+    - Go to "Logout" from a desktop on the top right corner
+        - Click logout
+        - Verified that logout flash message appears
 
 ### Register
 
@@ -242,10 +226,8 @@ Most common paths through the website:
 
 ## Known Bugs
 
-- NavBar and footer not sticky
-- 
-- 
-
+- Making NavBar and footer sticky
+- Making site more responsive 
 
 
 ## Feedback
