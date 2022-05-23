@@ -75,7 +75,7 @@ c. Restraints
 
 1. Color Scheme
 
-The color scheme chosen  ?  tones as these colors reflects 
+The color scheme chosen are warm tones (pink, orange, yellow) as these colors reflects the warm and sweet love of a mother.
 
 The main colour used for this project are as follow : 
 
@@ -171,6 +171,12 @@ The rest of the image reinforces the idea of connection with other mothers in a 
 - Build edit/delete for journal gratitude entries
 - Format date in journal gratitude entries
 - Scroll to top button
+- Implement a forum for users to discuss topics bout motherhood
+- Implement review system for events
+- Implement a live chat room (similar to discord)
+- Build twitch extensions / Twitch Extensions  will enable to have a live app that interact with the stream, as a panel on a channel, or with chat. Objective is to create interactive experiences between mothers.
+- Create event : select place / Add a countries dropdown
+
 
 
 ## Technologies Used 
