@@ -166,8 +166,11 @@ The rest of the image reinforces the idea of connection with other mothers in a 
 ### Features to implement in the future
 
 - Play button to listening relaxing music while completing the gratitude journal
-- Send confirmation e-mail when user confirm participation with link to event
+- Send confirmation e-mail when user confirms participation to an event with link to event
 - Add image to an event when creating an event
+- Build edit/delete for journal gratitude entries
+- Format date in journal gratitude entries
+- Scroll to top button
 
 
 ## Technologies Used 

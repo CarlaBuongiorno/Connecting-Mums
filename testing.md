@@ -97,7 +97,7 @@ Most common paths through the website:
 
 1. Navbar
     - Click on the logo "Connecting Mums" / Check if it redirects to the welcome page
-    - Check each view for navigation links
+    - Check each link in navbar to verify if navigation links brings back to main page
 
 2. Footer
     - Check social medial links if it works
@@ -162,7 +162,7 @@ Most common paths through the website:
 3. Sections to verify
 - Go to "My Account" from a desktop
     * Gratitude Journal
-        - Check that saved gratitudes are rendering 
+        - Check that gratitudes are rendering 
         - Verify that the following information are present in the journal:
             - date
             - 3 gratitudes
