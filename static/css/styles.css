@@ -11470,6 +11470,14 @@ footer {
   overflow: auto;
 }
 
+/* fix gratitudes responsivness in progress  */
+@include media-breakpoint-up(sm) {
+  .my-custom-scrollbar {
+    position: block;
+    width: 100px;
+  }
+}
+
 /* Scroll to top button */
 
 #myBtn {
@@ -11491,3 +11499,6 @@ footer {
 #myBtn:hover {
   background-color: #fc8d1d; 
 }
+
+/* scrollbar 2.0 */
+

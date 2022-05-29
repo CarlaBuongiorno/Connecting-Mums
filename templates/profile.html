@@ -27,29 +27,70 @@
             {% endif %}
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-2">
         <div class="col-12">
+
+            <!-- Possibe disploy for gratitude -->
+            <!-- <nav id="navbar-example2" class="navbar bg-light px-3 mt-5 mb-5">
+                <a class="navbar-brand" href="#">All gratitudes</a>
+                <ul class="nav nav-pills">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading1">January</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading2">February</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Other</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#scrollspyHeading3">March</a></li>
+                      <li><a class="dropdown-item" href="#scrollspyHeading4">April</a></li>
+                      <li><a class="dropdown-item" href="#scrollspyHeading5">May</a></li>
+                      <li><a class="dropdown-item" href="#scrollspyHeading5">June</a></li>
+                      <li><a class="dropdown-item" href="#scrollspyHeading5">July</a></li>
+                      <li><a class="dropdown-item" href="#scrollspyHeading5">August</a></li>
+                      <li><a class="dropdown-item" href="#scrollspyHeading5">September</a></li>
+                      <li><a class="dropdown-item" href="#scrollspyHeading5">October</a></li>
+                      <li><a class="dropdown-item" href="#scrollspyHeading5">November</a></li>
+                      <li><a class="dropdown-item" href="#scrollspyHeading5">December</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+              <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                <h4 id="scrollspyHeading1">January</h4>
+                <p>...</p>
+                <h4 id="scrollspyHeading2">February</h4>
+                <p>...</p>
+                <h4 id="scrollspyHeading3">March</h4>
+                <p>...</p>
+                <h4 id="scrollspyHeading4">April</h4>
+                <p>...</p>
+                <h4 id="scrollspyHeading5">May</h4>
+                <p>...</p>
+              </div> -->
+
+
+
             <div class="my-3 p-3 my-custom-scrollbar">
                     {% for journal_entry in my_journal %}
                         {% if username == journal_entry.journalist %}
-                        <div class="media text-muted pt-3">
-                            <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
-                            <div class="media-body pb-3 small mb-0 lh-125 ">
-                                <div class="d-flex justify-content-between w-100">
-                                    <strong style="color:#fc8d1d;"> Date : {{ journal_entry.gratitude_date }} </strong></br>
+                        <div class="text-muted pt-3">
+                            <div class="pb-3 small mb-0 lh-125 ">
+                                <div class="d-flex justify-content-between w-100" style="color:#fc8d1d;"> Date : {{ journal_entry.gratitude_date }} </br>
                                 </div>
                             </div>
-                            <div class="media-body pb-3 mb-0 small lh-125 ">
+                            <div class="pb-3 mb-0 small lh-125 ">
                                 <div class="d-flex justify-content-between w-100">
-                                    <strong class="text-gray-dark"> 1 : {{ journal_entry.gratitude_1 }} </strong></br>
+                                    <strong class="d-flex text-gray-dark"> 1 : {{ journal_entry.gratitude_1 }} </strong></br>
                                 </div>
                             </div>
-                            <div class="media-body pb-3 mb-0 small lh-125">
+                            <div class="pb-3 mb-0 small lh-125">
                                 <div class="d-flex justify-content-between w-100">
                                     <strong class="text-gray-dark"> 2 : {{ journal_entry.gratitude_2 }}</strong></br>
                                 </div>
                             </div>
-                            <div class="media-body pb-3 mb-0 small lh-125">
+                            <div class="pb-3 mb-0 small lh-125">
                                 <div class="d-flex justify-content-between w-100 mb-2">
                                     <strong class="text-gray-dark"> 3 : {{ journal_entry.gratitude_3 }}</strong></br>
                                 </div>
@@ -59,6 +100,10 @@
                         {% endif %}
                     {% endfor %}
                 </div>
+
+
+
+
             </div>
         </div>
     </div>

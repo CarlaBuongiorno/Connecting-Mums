@@ -105,7 +105,7 @@ Imagery is important in this website to illustrate the importance of the connect
 * Material
     - ![Connecting-Mums Logo](static/assets/img/logo.png)
     - ![Connecting-Mums Branding](static/assets/img/branding-colors.png)
-    - ![Connecting-Mums Goodies](static/assets/img/connecting-mums_goodies.png)
+    - ![Connecting-Mums Goodies](static/assets/img/connecting-mum-goodies.png)
 
 
 * Covers / Hero image 
