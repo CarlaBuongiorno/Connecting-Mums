@@ -1,6 +1,6 @@
 # Connecting-Mums 
 
-[View the live project here](https://connecting-mums.herokuapp.com/)
+[View the live project here](https://connecting-mums.onrender.com)
 
 ![Connecting-Mums](static/assets/img/amiresponsive.png)
 
